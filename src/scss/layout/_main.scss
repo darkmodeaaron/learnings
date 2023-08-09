@@ -2,4 +2,18 @@
     display: flex;
     gap: 25px;
     font-size: 12px;
+    margin-bottom: 10px;
 }
+
+.link {
+    cursor: pointer;
+}
+
+.return {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: none;
+}
+
+
