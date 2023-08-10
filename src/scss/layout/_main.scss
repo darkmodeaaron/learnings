@@ -2,7 +2,7 @@
     display: flex;
     gap: 25px;
     font-size: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .link {
@@ -16,4 +16,34 @@
     display: none;
 }
 
+.date {
+    font-size: 12px;
+}
 
+
+// views
+
+.noteTitle {
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.noteImage {
+    width: 75%;
+    margin: 15px 0px;
+}
+
+.codeTitle {
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.codeLog {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.commitMade {
+    font-size: 12px;
+    margin-top: 15px;
+}

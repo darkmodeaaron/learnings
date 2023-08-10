@@ -12,7 +12,7 @@ import { exampleLink } from './example';
 import { exampleView } from './example';
 import { exampleViewVisible } from './example';
 
-
+//
 
 export const content = document.querySelector('#content')
 export const main = document.querySelector('#main')
@@ -45,6 +45,47 @@ returnBtn.addEventListener('click', () => {
     returnBtnVisible()
 })
 
+function createViewNoteTitle(view) {
+    const noteTitle = document.createElement('h4')
+    noteTitle.classList.add('noteTitle')
+    noteTitle.innerHTML = 'notes'
+    view.appendChild(noteTitle)
+}
+
+function createViewNoteImage(imageSrc, view) {
+    const noteImage = document.createElement('img')
+    noteImage.classList.add('noteImage')
+    noteImage.src = imageSrc
+    view.appendChild(noteImage)
+}
+
+function createViewCodeTitle(view) {
+    const codeTitle = document.createElement('h4')
+    codeTitle.classList.add('codeTitle')
+    codeTitle.innerText = 'code activity'
+    view.appendChild(codeTitle)
+}
+
+function createViewCodeLog(log, view) {
+    const codeLog = document.createElement('h4')
+    codeLog.classList.add('codeLog')
+    codeLog.innerText = log
+    view.appendChild(codeLog)
+}
+
+function createCommitMade(date, view) {
+    const commitMade = document.createElement('h4')
+    commitMade.classList.add('commitMade')
+    commitMade.innerText = `commit made: ${date}`
+    view.appendChild(commitMade)
+}
+
+export {createViewNoteTitle}
+export {createViewNoteImage}
+export {createViewCodeTitle}
+export {createViewCodeLog}
+export {createCommitMade}
+
 //
 
 appendOopPrinciplesTab()
@@ -58,6 +99,7 @@ oopPrinciplesLink.addEventListener('click', () => {
     returnBtnVisible()
 })
 
+//
 
 appendExampleTab()
 appendExampleView()

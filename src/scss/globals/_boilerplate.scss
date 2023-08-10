@@ -5,5 +5,14 @@
 }
 
 body {
+    margin: 0 auto;
+    padding: 0px 10px ;
+    max-width: 600px;
+    background-color: rgb(231, 231, 231);
+}
+
+#content {
+    background-color: white;
     padding: 10px;
+    height: 100vh;
 }
