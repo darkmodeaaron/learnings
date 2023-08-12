@@ -19,7 +19,7 @@ function createOopPrinciplesTabUI() {
 
     const oopPrinciplesDate = document.createElement('h4')
     oopPrinciplesDate.classList.add('date')
-    oopPrinciplesDate.innerText = '09.08.23'
+    oopPrinciplesDate.innerText = '10.08.23'
     oopPrinciplesPost.appendChild(oopPrinciplesDate)
 
     oopPrinciplesLink.classList.add('link')
@@ -47,7 +47,7 @@ function createOopPrinciplesView() {
     
     const oopPrinciplesHeaderDate = document.createElement('h4')
     oopPrinciplesHeaderDate.classList.add('date')
-    oopPrinciplesHeaderDate.innerText = '09.08.23'
+    oopPrinciplesHeaderDate.innerText = '10.08.23'
     oopPrinciplesHeader.appendChild(oopPrinciplesHeaderDate)
 
     const oopPrinciplesHeaderTitle = document.createElement('h4')

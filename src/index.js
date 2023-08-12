@@ -6,21 +6,18 @@ import { oopPrinciplesLink } from './oop-principles';
 import { oopPrinciplesView } from './oop-principles';
 import { oopPrinciplesViewVisible } from './oop-principles';
 
-import { appendExampleTab } from './example';
-import { appendExampleView } from './example';
-import { exampleLink } from './example';
-import { exampleView } from './example';
-import { exampleViewVisible } from './example';
-
 //
 
 export const content = document.querySelector('#content')
 export const main = document.querySelector('#main')
+export const header = document.querySelector('#header')
 export const tabs = document.querySelector('.tabs')
 export const views = document.querySelector('.views')
 
 export const returnBtn = document.querySelector('.return')
 let visible = returnBtn.getAttribute('visible')
+
+
 
 function returnBtnVisible() {
     if (visible === 'false') {
@@ -32,18 +29,7 @@ function returnBtnVisible() {
 
 returnBtnVisible()
 
-returnBtn.addEventListener('click', () => {
-    visible = 'false'
-    tabs.style.display = 'block'
-    if (oopPrinciplesViewVisible === 'true') {
-        oopPrinciplesView.style.display = 'none'
-        oopPrinciplesViewVisible = 'false'
-    } else if (exampleViewVisible === 'true') {
-        exampleView.style.display = 'none'
-        exampleViewVisible = 'false'
-    }
-    returnBtnVisible()
-})
+
 
 function createViewNoteTitle(view) {
     const noteTitle = document.createElement('h4')
@@ -101,13 +87,101 @@ oopPrinciplesLink.addEventListener('click', () => {
 
 //
 
-appendExampleTab()
-appendExampleView()
+function Lesson(tabDate, tabTitle, viewDate, viewTitle, noteImage, codeLog, commitMade) {
 
-exampleLink.addEventListener('click', () => {
-    tabs.style.display = 'none'
-    exampleView.style.display = 'block'
-    visible = 'true'
-    exampleViewVisible = 'true'
+    this.tabDate = tabDate
+    this.tabTitle = tabTitle
+    this.viewDate = viewDate
+    this.viewTitle = viewTitle
+    this.noteTitle = 'notes'
+    this.noteImage = noteImage
+    this.codeTitle = 'code activity'
+    this.codeLog = codeLog
+    this.commitMade = `commit made: ${commitMade}`
+
+    const exampleTab = document.createElement('div')
+    exampleTab.classList.add('exampleTab')
+
+    exampleTab.addEventListener('click', (e) => {
+       
+        if (e.target.classList.contains('tabTitleX')) {
+            console.log('hello')
+            exampleView.style.display = 'block'
+            visible = 'true'
+            returnBtnVisible()
+            tabs.style.display = 'none'
+        }
+
+        
+        
+    })
+
+    this.createTab = function() {
+
+        const tabDateX = document.createElement('h4')
+        tabDateX.classList.add('tabDateX')
+        tabDateX.innerText = this.tabDate
+        exampleTab.appendChild(tabDateX)
+
+        const tabTitleX = document.createElement('h4')
+        tabTitleX.classList.add('tabTitleX')
+        tabTitleX.innerText = this.tabTitle
+        exampleTab.appendChild(tabTitleX)
+
+        
+
+        return exampleTab
+
+    }
+
+    const exampleView = document.createElement('div')
+    exampleView.classList.add('exampleView')
+    exampleView.style.display = 'none'
+
+    this.createView = function() {
+
+        const exampleViewHeader = document.createElement('div')
+        exampleViewHeader.classList.add('exampleViewHeader')
+        exampleView.appendChild(exampleViewHeader)
+
+        const exampleViewHeaderDate = document.createElement('h4')
+        exampleViewHeaderDate.classList.add('exampleViewHeaderDate')
+        exampleViewHeaderDate.innerText = this.viewDate
+        exampleViewHeader.appendChild(exampleViewHeaderDate)
+
+        const exampleViewHeaderTitle = document.createElement('h4')
+        exampleViewHeaderTitle.classList.add('exampleViewHeaderTitle')
+        exampleViewHeaderTitle.innerText = this.viewTitle
+        exampleViewHeader.appendChild(exampleViewHeaderTitle)
+
+        return exampleView
+
+    }
+
+    this.appendLesson = function(tab, view) {
+        views.appendChild(view)
+        tabs.appendChild(tab)
+    }
+}
+
+export {Lesson}
+
+import { example } from './example';
+
+example.appendLesson(example.createTab(), example.createView())
+
+const selExampleView = document.querySelectorAll('.exampleView')
+
+returnBtn.addEventListener('click', () => {
+    visible = 'false'
+    tabs.style.display = 'block'
+    if (oopPrinciplesViewVisible === 'true') {
+        oopPrinciplesView.style.display = 'none'
+        oopPrinciplesViewVisible = 'false'
+    } 
+    selExampleView.forEach(ex => {
+        ex.style.display = 'none'
+    })
     returnBtnVisible()
 })
+
