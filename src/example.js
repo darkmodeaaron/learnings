@@ -1,4 +1,3 @@
-import { Lesson } from "."
+import { Task } from "."
 
-export const example = new Lesson('00.00.00', 'example title', '00.00.00', 'example title', '/src/noteImages/oopPrinciplesNotes.png', 'lorem lorem lorem', '00.00.00')
-
+export const todoTask = new Task('15.08.23', 'todo list') 

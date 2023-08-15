@@ -98,6 +98,7 @@ function Lesson(tabDate, tabTitle, viewDate, viewTitle, noteImage, codeLog, comm
     this.codeTitle = 'code activity'
     this.codeLog = codeLog
     this.commitMade = `commit made: ${commitMade}`
+    
 
     const exampleTab = document.createElement('div')
     exampleTab.classList.add('exampleTab')
@@ -105,15 +106,12 @@ function Lesson(tabDate, tabTitle, viewDate, viewTitle, noteImage, codeLog, comm
     exampleTab.addEventListener('click', (e) => {
        
         if (e.target.classList.contains('tabTitleX')) {
-            console.log('hello')
             exampleView.style.display = 'block'
             visible = 'true'
             returnBtnVisible()
             tabs.style.display = 'none'
         }
 
-        
-        
     })
 
     this.createTab = function() {
@@ -141,7 +139,7 @@ function Lesson(tabDate, tabTitle, viewDate, viewTitle, noteImage, codeLog, comm
     this.createView = function() {
 
         const exampleViewHeader = document.createElement('div')
-        exampleViewHeader.classList.add('exampleViewHeader')
+        exampleViewHeader.classList.add('exampleViewHeader', 'post')
         exampleView.appendChild(exampleViewHeader)
 
         const exampleViewHeaderDate = document.createElement('h4')
@@ -154,23 +152,97 @@ function Lesson(tabDate, tabTitle, viewDate, viewTitle, noteImage, codeLog, comm
         exampleViewHeaderTitle.innerText = this.viewTitle
         exampleViewHeader.appendChild(exampleViewHeaderTitle)
 
+        const notesTitle = document.createElement('h4')
+        notesTitle.classList.add('notesTitle')
+        notesTitle.innerText = this.noteTitle
+        exampleView.appendChild(notesTitle)
+
         return exampleView
 
     }
 
     this.appendLesson = function(tab, view) {
         views.appendChild(view)
-        tabs.appendChild(tab)
+        tabs.prepend(tab)
     }
 }
 
-export {Lesson}
+function Task(taskTabDate, taskTabTitle) {
 
-import { example } from './example';
+    this.taskTabDate = taskTabDate
+    this.taskTabTitle = taskTabTitle
 
-example.appendLesson(example.createTab(), example.createView())
+    const taskTab = document.createElement('div')
+    taskTab.classList.add('taskTab')
+
+    taskTab.addEventListener('click', (e) => {
+       
+        if (e.target.classList.contains('taskTabTitle')) {
+            taskView.style.display = 'block'
+            visible = 'true'
+            returnBtnVisible()
+            tabs.style.display = 'none'
+            
+        }
+
+    })
+
+    this.createTaskTab = function() {
+        
+        const taskTabDate = document.createElement('h4')
+        taskTabDate.classList.add("taskTabDate")
+        taskTabDate.innerText = this.taskTabDate
+        taskTab.appendChild(taskTabDate)
+
+        const taskTabTitle = document.createElement('h4')
+        taskTabTitle.classList.add("taskTabTitle")
+        taskTabTitle.innerText = this.taskTabTitle
+        taskTab.appendChild(taskTabTitle)
+
+        return taskTab
+
+    }
+
+    const taskView = document.createElement('div')
+    taskView.classList.add('taskView')
+    taskView.style.display = 'none'
+
+    this.createTaskView = function() {
+
+        const taskViewHeader = document.createElement('div')
+        taskViewHeader.classList.add('exampleViewHeader', 'post')
+        taskView.appendChild(taskViewHeader)
+
+        const taskViewHeaderDate = document.createElement('h4')
+        taskViewHeaderDate.classList.add('taskViewHeaderDate')
+        taskViewHeaderDate.innerText = this.taskTabDate
+        taskViewHeader.appendChild(taskViewHeaderDate)
+
+        const taskViewHeaderTitle = document.createElement('h4')
+        taskViewHeaderTitle.classList.add('taskViewHeaderTitle')
+        taskViewHeaderTitle.innerText = this.taskTabTitle
+        taskViewHeader.appendChild(taskViewHeaderTitle)
+
+        return taskView
+
+    }
+    
+
+    this.appendTask = function(tab, view) {
+        tabs.appendChild(tab)
+        views.appendChild(view)
+    }
+
+}
+
+import { todoTask } from './example';
+
+todoTask.appendTask(todoTask.createTaskTab(), todoTask.createTaskView())
+
+
 
 const selExampleView = document.querySelectorAll('.exampleView')
+const taskViews = document.querySelectorAll('.taskView')
 
 returnBtn.addEventListener('click', () => {
     visible = 'false'
@@ -182,6 +254,13 @@ returnBtn.addEventListener('click', () => {
     selExampleView.forEach(ex => {
         ex.style.display = 'none'
     })
+    taskViews.forEach(view => {
+        view.style.display = 'none'
+    })
     returnBtnVisible()
 })
 
+
+
+export {Lesson}
+export {Task}
