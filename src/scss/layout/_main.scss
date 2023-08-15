@@ -9,15 +9,11 @@
     cursor: pointer;
 }
 
-.return {
+.returnBtn {
     position: absolute;
     top: 20px;
     right: 10px;
     display: none;
-}
-
-.date {
-    font-size: 12px;
 }
 
 
@@ -49,30 +45,21 @@
 }
 
 
-
-
-
 ///// new
 
-.exampleTab {
+.tab {
     display: flex;
     gap: 25px;
     font-size: 12px;
     margin-bottom: 15px;
 }
 
-.exampleViewHeader {
-    display: flex;
-    gap: 25px;
-    font-size: 12px;
+.tabTitle {
+    cursor: pointer;
 }
 
-
-
-
-
-.taskTab {
-    display: flex;
+.taskLink {
     font-size: 12px;
-    gap: 25px;
+    color: black;
+    font-weight: bold;
 }
