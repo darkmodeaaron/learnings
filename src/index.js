@@ -96,7 +96,7 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
     this.commitMade = `commit made: ${commitMade}`
     
     const lessonTab = document.createElement('div')
-    lessonTab.classList.add('exampleTab')
+    lessonTab.classList.add('lessonTab', 'tab')
 
     lessonTab.addEventListener('click', (e) => {
        
@@ -113,12 +113,12 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
 
         const tabDate = document.createElement('h4')
         tabDate.classList.add('tabDate')
-        tabDate.innerText = this.tabDate
-        exampleTab.appendChild(tabDate)
+        tabDate.innerText = this.lessonTabDate
+        lessonTab.appendChild(tabDate)
 
         const tabTitle = document.createElement('h4')
         tabTitle.classList.add('tabTitle')
-        tabTitle.innerText = this.tabTitle
+        tabTitle.innerText = this.lessonTabTitle
         lessonTab.appendChild(tabTitle)
 
         return lessonTab
@@ -132,7 +132,7 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
     this.createLessonView = function() {
 
         const lessonViewHeader = document.createElement('div')
-        lessonViewHeader.classList.add('lessonViewHeader')
+        lessonViewHeader.classList.add('lessonViewHeader', 'tab')
         lessonView.appendChild(lessonViewHeader)
 
         const lessonViewHeaderDate = document.createElement('h4')
@@ -231,10 +231,10 @@ function Task(taskTabDate, taskTabTitle) {
 
 }
 
-import { todoTask } from './example';
-todoTask.appendTask(todoTask.createTaskTab(), todoTask.createTaskView())
+import { prototypesAndInheritance } from './prototypesAndInheritance';
+prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView())
 
-const lessonView = document.querySelectorAll('.exampleView')
+const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')
 
 returnBtn.addEventListener('click', () => {
@@ -244,7 +244,7 @@ returnBtn.addEventListener('click', () => {
         oopPrinciplesView.style.display = 'none'
         oopPrinciplesViewVisible = 'false'
     } 
-    lessonView.forEach(lesson => {
+    lessonViews.forEach(lesson => {
         lesson.style.display = 'none'
     })
     taskViews.forEach(view => {
@@ -252,8 +252,6 @@ returnBtn.addEventListener('click', () => {
     })
     returnBtnVisible()
 })
-
-
 
 export {Lesson}
 export {Task}
