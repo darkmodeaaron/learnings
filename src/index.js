@@ -146,9 +146,29 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
         lessonViewHeader.appendChild(lessonViewHeaderTitle)
 
         const notesTitle = document.createElement('h4')
-        notesTitle.classList.add('notesTitle')
+        notesTitle.classList.add('noteTitle')
         notesTitle.innerText = this.noteTitle
         lessonView.appendChild(notesTitle)
+
+        const noteImg = document.createElement('img')
+        noteImg.classList.add('noteImage')
+        noteImg.src = this.noteImage
+        lessonView.appendChild(noteImg)
+
+        const lessonCodeTitle = document.createElement('h4')
+        lessonCodeTitle.classList.add('lessonCodeTitle', 'codeTitle')
+        lessonCodeTitle.innerText = this.codeTitle
+        lessonView.appendChild(lessonCodeTitle)
+
+        const lessonCodeLog = document.createElement('h4')
+        lessonCodeLog.classList.add('codeLog')
+        lessonCodeLog.innerText = this.codeLog
+        lessonView.appendChild(lessonCodeLog)
+
+        const lessonCommitMade = document.createElement('h4')
+        lessonCommitMade.classList.add('commitMade')
+        lessonCommitMade.innerText = this.commitMade
+        lessonView.appendChild(lessonCommitMade)
 
         return lessonView
 
