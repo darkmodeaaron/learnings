@@ -1,5 +1,6 @@
 #todoListBody { 
     background-color: #28282B;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .todoListContainer {
@@ -10,12 +11,13 @@
 
 .newTodoBox {
     margin: 150px auto 50px auto;
-    padding: 5px 15px;
+    padding: 10px 25px;
     background-color: white;
+    filter: drop-shadow(5px 10px 4px black);
 }
 
-.todoListContainer h4 {
-    margin-bottom: 5px;
+.newTodoBox h4 {
+    margin-bottom: 7.5px;
 }
 
 .inputaddBox {
@@ -24,10 +26,13 @@
 }
 
 .todoListContainer input {
-    width: 300px;
+    width: 275px;
 }
 
 .todoListContainer button {
+    background-color: #28282B;
+    color: white;
+    border: 0;
     padding: 5px 15px;
 }
 
@@ -40,5 +45,16 @@
     height: 35px;
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    justify-content: space-between;
+    padding: 0 25px
+}
+
+.delBtn {
+    height: 7.5px;
+    width: 7.5px;
+    background-color: red;
+}
+
+input {
+    padding: 5px;
 }
