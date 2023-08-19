@@ -180,10 +180,12 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
     }
 }
 
-function Task(taskTabDate, taskTabTitle) {
+function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref) {
 
     this.taskTabDate = taskTabDate
     this.taskTabTitle = taskTabTitle
+    this.taskViewLink = taskViewLink
+    this.linkHref = linkHref
     const taskTab = document.createElement('div')
     taskTab.classList.add('tab')
     const taskView = document.createElement('div')
@@ -236,8 +238,8 @@ function Task(taskTabDate, taskTabTitle) {
 
         const taskLink = document.createElement('a')
         taskLink.classList.add('taskLink')
-        taskLink.href = 'todoList.html'
-        taskLink.innerText = 'todo list'
+        taskLink.innerText = this.taskViewLink
+        taskLink.href = this.linkHref
         taskView.appendChild(taskLink)
 
         return taskView
@@ -253,6 +255,9 @@ function Task(taskTabDate, taskTabTitle) {
 
 import { prototypesAndInheritance } from './prototypesAndInheritance';
 prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView())
+
+import { todoListTask } from './todoList';
+todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView())
 
 const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')

@@ -1,0 +1,27 @@
+#todoListBody { 
+    background-color: #28282B;
+}
+
+.todoListContainer {
+    margin: 150px auto 0 auto;
+    padding: 15px;
+    background-color: white;
+    max-width: 400px;
+}
+
+.todoListContainer h4 {
+    margin-bottom: 10px;
+}
+
+.inputaddBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todoListContainer input {
+    width: 300px;
+}
+
+.todoListContainer button {
+    padding: 5px 15px;
+}
