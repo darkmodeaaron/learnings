@@ -3,14 +3,19 @@
 }
 
 .todoListContainer {
-    margin: 150px auto 0 auto;
-    padding: 15px;
-    background-color: white;
+    margin: 0 auto;
+
     max-width: 400px;
 }
 
+.newTodoBox {
+    margin: 150px auto 50px auto;
+    padding: 5px 15px;
+    background-color: white;
+}
+
 .todoListContainer h4 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .inputaddBox {
@@ -24,4 +29,16 @@
 
 .todoListContainer button {
     padding: 5px 15px;
+}
+
+.todos {
+    max-width: 400px;
+}
+
+.box {
+    background-color: white;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
 }

@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".todos"),t=document.querySelector(".addBtn"),n=document.getElementById("input");function d(t){this.task=t,this.createTodo=function(){const t=document.createElement("div");t.classList.add("box"),t.innerText=this.task,e.appendChild(t)}}t.addEventListener("click",(()=>{new d(document.getElementById("input").value).createTodo(),n.value=""}))})();

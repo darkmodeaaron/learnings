@@ -256,7 +256,7 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref) {
 import { prototypesAndInheritance } from './prototypesAndInheritance';
 prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView())
 
-import { todoListTask } from './todoList';
+import { todoListTask } from './todoListTask';
 todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView())
 
 const lessonViews = document.querySelectorAll('.lessonView')
@@ -280,3 +280,4 @@ returnBtn.addEventListener('click', () => {
 
 export {Lesson}
 export {Task}
+
