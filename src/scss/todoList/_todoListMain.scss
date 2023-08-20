@@ -6,22 +6,25 @@
 .todoListContainer {
     margin: 0 auto;
 
-    max-width: 400px;
+    max-width: 1200px;
 }
 
 .newTodoBox {
-    margin: 150px auto 50px auto;
-    padding: 10px 25px;
+    margin: 100px auto 50px auto;
+    padding: 25px 25px;
+    max-width: 400px;
     background-color: white;
     filter: drop-shadow(5px 10px 4px black);
 }
 
 .newTodoBox h4 {
-    margin-bottom: 7.5px;
+    margin-bottom: 10px;
 }
 
 .inputaddBox {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: space-between;
 }
 
@@ -37,24 +40,87 @@
 }
 
 .todos {
-    max-width: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .box {
     background-color: white;
-    height: 35px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 25px
+    padding: 0 25px;
+    width: 380px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: flex-start;
+}
+
+.check {
+    width: 25px;
+    height: 15px;
+    border: 2px solid black;
+    border-radius: 7.5px;
+    display: flex;
+    align-items: center;
 }
 
 .delBtn {
-    height: 7.5px;
-    width: 7.5px;
-    background-color: red;
+    height: 15px;
+    width: 15px;
+    background-image: url(/src/noteImages/bin.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-input {
+#titleInput {
     padding: 5px;
+    width: 100%;
+}
+
+#descriptionInput {
+    padding: 5px;
+    width: 100%;
+}
+
+.addBtn {
+    width: fit-content;
+}
+
+.boxHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+
+.boxTitle {
+    font-size: 16px;
+}
+
+.boxDescription {
+    font-size: 16px;
+}
+
+.circle {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    margin-left: 1px;
+    transition: 500ms ease-in-out;
+}
+
+.headerFlex {
+    display: flex;
+    gap: 10px;
+}
+
+.circle.active {
+    transform: translateX(100%);
 }

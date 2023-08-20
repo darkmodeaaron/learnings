@@ -3,28 +3,55 @@ const todos = document.querySelector('.todos')
 
 
 const addBtn = document.querySelector('.addBtn')
-const input = document.getElementById('input')
+const titleInput = document.getElementById('titleInput')
 
-function Todo(task) {
-    this.task = task
+
+function Todo(taskTitle) {
+    this.taskTitle = taskTitle
     this.createTodo = function () {
         const box = document.createElement('div')
         box.classList.add('box')
         todos.appendChild(box)
 
-        const boxText = document.createElement('h4')
-        boxText.innerText = this.task
-        box.appendChild(boxText)
+        const boxHeader = document.createElement('div')
+        boxHeader.classList.add('boxHeader')
+        box.appendChild(boxHeader)
+
+        const boxTitle = document.createElement('h4')
+        boxTitle.classList.add('boxTitle')
+        boxTitle.innerText = this.taskTitle
+        boxHeader.appendChild(boxTitle)
+
+        const headerFlex = document.createElement('div')
+        headerFlex.classList.add('headerFlex')
+        boxHeader.appendChild(headerFlex)
+
+        const check = document.createElement('div')
+        check.classList.add('check')
+        headerFlex.appendChild(check)
+
+        const checkcircle = document.createElement('div')
+        checkcircle.classList.add('circle')
+        checkcircle.style.backgroundColor = 'red'
+        check.appendChild(checkcircle)
 
         const delBtn = document.createElement('div')
         delBtn.classList.add('delBtn')
-        box.appendChild(delBtn)
+        headerFlex.appendChild(delBtn)
 
         delBtn.addEventListener('click', () => {
             todos.removeChild(box)
-            localStorage.removeItem(task)
+            localStorage.removeItem(taskTitle)
         })
 
+        check.addEventListener('click', () => {
+            checkcircle.classList.toggle('active')
+            if (checkcircle.style.backgroundColor == 'red') {
+                checkcircle.style.backgroundColor = 'greenyellow'
+            } else {
+                checkcircle.style.backgroundColor = 'red'
+            }
+        })
     }
 }
 
@@ -32,17 +59,18 @@ let change = 1
 
 addBtn.addEventListener('click', () => {
 
-    const inputValue = document.getElementById('input').value
-    localStorage.setItem(`${inputValue}`, inputValue)
-    const newTodo = new Todo(localStorage.getItem(`${inputValue}`))
+    const titleValue = document.getElementById('titleInput').value
+    localStorage.setItem(`${titleValue}`, titleValue)
+
+    const newTodo = new Todo(localStorage.getItem(`${titleValue}`))
+
+
     newTodo.createTodo()
-    input.value = ''
+    titleInput.value = ''
+
     change += 1
 
 })
-
-
-
 
 function getLocalStorage() {
 
@@ -57,3 +85,5 @@ function getLocalStorage() {
       }
 
 }
+
+getLocalStorage()
