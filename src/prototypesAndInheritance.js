@@ -4,6 +4,8 @@ const prototypeCodeLog = 'quickly went over protypes and inheritance today. was 
 
 export const prototypesAndInheritance = new Lesson('16.08.23', 'prototypes and inheritance', '16.08.23', 'prototypes and inheritance', '/src/noteImages/prototypeNotes.png', prototypeCodeLog, '16.06.23')
 
+/*
+
 function Person(name, age) {
 
     this.name = name
@@ -24,5 +26,5 @@ Person.prototype.sayPlayer = function() {
     console.log('i am a player')
 }
 
-
+*/
 

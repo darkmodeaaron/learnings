@@ -111,6 +111,11 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
 
     this.createLessonTab = function() {
 
+        const tabType = document.createElement('h4')
+        tabType.classList.add('tabType')
+        tabType.innerText = 'learnings'
+        lessonTab.appendChild(tabType)
+
         const tabDate = document.createElement('h4')
         tabDate.classList.add('tabDate')
         tabDate.innerText = this.lessonTabDate
@@ -180,17 +185,20 @@ function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, 
     }
 }
 
-function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref) {
+function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
     this.taskTabDate = taskTabDate
     this.taskTabTitle = taskTabTitle
     this.taskViewLink = taskViewLink
     this.linkHref = linkHref
+    this.status = status
     const taskTab = document.createElement('div')
     taskTab.classList.add('tab')
     const taskView = document.createElement('div')
     taskView.classList.add('taskView')
     taskView.style.display = 'none'
+
+
 
     taskTab.addEventListener('click', (e) => {
        
@@ -199,12 +207,22 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref) {
             visible = 'true'
             returnBtnVisible()
             tabs.style.display = 'none'
-            
         }
 
     })
 
     this.createTaskTab = function() {
+
+        const tabType = document.createElement('h4')
+        tabType.classList.add('tabType')
+        tabType.innerText = 'task'
+        taskTab.appendChild(tabType)
+
+        if (this.status == 'complete') {
+            tabType.style.color = 'yellowgreen'
+        } else {
+            tabType.style.color = 'red'
+        }
         
         const taskTabDate = document.createElement('h4')
         taskTabDate.classList.add("tabDate")
@@ -258,6 +276,10 @@ prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab()
 
 import { todoListTask } from './todoListTask';
 todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView())
+
+import { reactIntro } from './reactIntro';
+
+reactIntro.appendLesson(reactIntro.createLessonTab(), reactIntro.createLessonView())
 
 const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')
