@@ -271,10 +271,11 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
 }
 
-function Learning(tabDate, tabTitle, noteImg, psuedoImg, codeActUrl, commitMade) {
+function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUrl, commitMade) {
 
     this.tabDate = tabDate
     this.tabTitle = tabTitle
+    this.learningPost = learningPost
     this.noteImage = noteImg
     this.psuedoImg = psuedoImg
     this.codeActUrl = codeActUrl
@@ -336,10 +337,41 @@ function Learning(tabDate, tabTitle, noteImg, psuedoImg, codeActUrl, commitMade)
         learningViewHeaderTitle.innerText = this.tabTitle
         learningViewHeader.appendChild(learningViewHeaderTitle)
 
+        const learningPost = document.createElement('h4');
+        learningPost.classList.add('learningPost')
+        learningPost.innerText = this.learningPost
+        learningView.appendChild(learningPost)
+
         const notesTitle = document.createElement('h4')
         notesTitle.classList.add('noteTitle')
         notesTitle.innerText = 'notes'
         learningView.appendChild(notesTitle)
+
+        const noteImg = document.createElement('img')
+        noteImg.classList.add('noteImage')
+        noteImg.src = this.noteImage
+        learningView.appendChild(noteImg)
+
+        const psuedoTitle = document.createElement('h4')
+        psuedoTitle.classList.add('noteTitle')
+        psuedoTitle.innerText = 'psuedo'
+        learningView.appendChild(psuedoTitle)
+
+        const psuedoImg = document.createElement('img')
+        psuedoImg.classList.add('noteImage')
+        psuedoImg.src = this.psuedoImg
+        learningView.appendChild(psuedoImg)
+
+        const codeActivity = document.createElement('a')
+        codeActivity.classList.add('codeActivity')
+        codeActivity.innerText = 'code activity'
+        codeActivity.href = this.codeActUrl
+        learningView.appendChild(codeActivity)
+
+        const commitMade = document.createElement('h4')
+        commitMade.classList.add('commitMade')
+        commitMade.innerText = `commit made; ${this.commitMade}`
+        learningView.appendChild(commitMade)
 
         return learningView
 
