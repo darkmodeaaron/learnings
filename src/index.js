@@ -1,10 +1,10 @@
 import './scss/main.scss';
 
-import { appendOopPrinciplesTab } from './oop-principles';
-import { appendOopPrinciplesView } from './oop-principles';
-import { oopPrinciplesLink } from './oop-principles';
-import { oopPrinciplesView } from './oop-principles';
-import { oopPrinciplesViewVisible } from './oop-principles';
+import { appendOopPrinciplesTab } from './tabs/learnings/oop-principles';
+import { appendOopPrinciplesView } from './tabs/learnings/oop-principles';
+import { oopPrinciplesLink } from './tabs/learnings/oop-principles';
+import { oopPrinciplesView } from './tabs/learnings/oop-principles';
+import { oopPrinciplesViewVisible } from './tabs/learnings/oop-principles';
 
 //
 
@@ -271,15 +271,95 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
 }
 
-import { prototypesAndInheritance } from './prototypesAndInheritance';
-prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView())
+function Learning(tabDate, tabTitle, noteImg, psuedoImg, codeActUrl, commitMade) {
 
-import { todoListTask } from './todoListTask';
-todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView())
+    this.tabDate = tabDate
+    this.tabTitle = tabTitle
+    this.noteImage = noteImg
+    this.psuedoImg = psuedoImg
+    this.codeActUrl = codeActUrl
+    this.commitMade = commitMade
 
-import { reactIntro } from './reactIntro';
+    const learningTab = document.createElement('div')
+    learningTab.classList.add('tab')
+    const learningView = document.createElement('div')
+    learningView.classList.add('taskView')
+    learningView.style.display = 'none'
 
-reactIntro.appendLesson(reactIntro.createLessonTab(), reactIntro.createLessonView())
+
+
+    learningTab.addEventListener('click', (e) => {
+       
+        if (e.target.classList.contains('tabTitle')) {
+            learningView.style.display = 'block'
+            visible = 'true'
+            returnBtnVisible()
+            tabs.style.display = 'none'
+        }
+
+    })
+
+    this.createLearningTab = function() {
+
+        const tabType = document.createElement('h4')
+        tabType.classList.add('tabType')
+        tabType.innerText = 'learning'
+        learningTab.appendChild(tabType)
+        
+        const learningTabDate = document.createElement('h4')
+        learningTabDate.classList.add("tabDate")
+        learningTabDate.innerText = this.tabDate
+        learningTab.appendChild(learningTabDate)
+
+        const learningTabTitle = document.createElement('h4')
+        learningTabTitle.classList.add("tabTitle")
+        learningTabTitle.innerText = this.tabTitle
+        learningTab.appendChild(learningTabTitle)
+
+        return learningTab
+
+    }
+
+    this.createLearningView = function() {
+
+        const learningViewHeader = document.createElement('div')
+        learningViewHeader.classList.add('lessonViewHeader', 'tab')
+        learningView.appendChild(learningViewHeader)
+
+        const learningViewHeaderDate = document.createElement('h4')
+        learningViewHeaderDate.classList.add('exampleViewHeaderDate')
+        learningViewHeaderDate.innerText = this.tabDate
+        learningViewHeader.appendChild(learningViewHeaderDate)
+
+        const learningViewHeaderTitle = document.createElement('h4')
+        learningViewHeaderTitle.classList.add('lessonViewHeaderTitle')
+        learningViewHeaderTitle.innerText = this.tabTitle
+        learningViewHeader.appendChild(learningViewHeaderTitle)
+
+        const notesTitle = document.createElement('h4')
+        notesTitle.classList.add('noteTitle')
+        notesTitle.innerText = 'notes'
+        learningView.appendChild(notesTitle)
+
+        return learningView
+
+    }
+
+    this.appendLearning = function(tab, view) {
+        tabs.prepend(tab)
+        views.appendChild(view)
+    }
+
+}
+
+import { prototypesAndInheritance } from './tabs/learnings/prototypesAndInheritance.js';
+prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView());
+
+import { todoListTask } from './tabs/tasks/todoList/todoListTask';
+todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView());
+
+import { asynchronousJsCallbacks } from './tabs/learnings/asynchronousJsCallbacks/asynchronousJsCallbacks';
+asynchronousJsCallbacks.appendLearning(asynchronousJsCallbacks.createLearningTab(), asynchronousJsCallbacks.createLearningView())
 
 const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')
@@ -302,6 +382,10 @@ returnBtn.addEventListener('click', () => {
 
 export {Lesson}
 export {Task}
+export {Learning}
+
+
+
 
 
 

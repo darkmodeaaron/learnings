@@ -1,10 +1,10 @@
-import { tabs } from "."
-import { views } from "."
-import { createViewNoteTitle } from "."
-import { createViewNoteImage } from "."
-import { createViewCodeTitle } from "."
-import { createViewCodeLog } from "."
-import { createCommitMade } from "."
+import { tabs } from "../.."
+import { views } from "../.."
+import { createViewNoteTitle } from "../.."
+import { createViewNoteImage } from "../.."
+import { createViewCodeTitle } from "../.."
+import { createViewCodeLog } from "../.."
+import { createCommitMade } from "../.."
 
 const oopPrinciplesTab = document.createElement('div')
 oopPrinciplesTab.classList.add('oopPrinciplesTab')

@@ -1,4 +1,4 @@
-import { Lesson } from ".";
+import { Lesson } from "../..";
 
 const prototypeCodeLog = 'quickly went over protypes and inheritance today. was looking to see if i could make adjustments to how this project is made. to post everything is wrapped under one object \'Lesson\'. im looking to refactor this to create more objects to separate code into more objects. this should be in line with oop principles.' 
 

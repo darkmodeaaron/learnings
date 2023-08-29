@@ -1,10 +1,7 @@
 const todos = document.querySelector('.todos')
 
-
-
 const addBtn = document.querySelector('.addBtn')
 const titleInput = document.getElementById('titleInput')
-
 
 function Todo(taskTitle) {
     this.taskTitle = taskTitle

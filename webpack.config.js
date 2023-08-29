@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: { 
     home: './src/index.js',
-    todoList: './src/newPageJS/todoList.js',
+    todoList: './src/tabs/tasks/todoList/todoList.js',
   },
   output: {
     filename: "[name].bundle.js",
