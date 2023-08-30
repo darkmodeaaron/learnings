@@ -109,7 +109,7 @@
 
 .referenceNode {
     font-size: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 7.5px;
     color: blue;
     font-weight: 600;
 }
@@ -120,4 +120,8 @@
 
 a {
     text-decoration: none;
+}
+
+.lessonViewHeader {
+    width: fit-content;
 }

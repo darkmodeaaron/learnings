@@ -271,7 +271,7 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
 }
 
-function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUrl, references ,commitMade) {
+function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUrl, references) {
 
     this.tabDate = tabDate
     this.tabTitle = tabTitle
@@ -280,7 +280,6 @@ function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUr
     this.psuedoImg = psuedoImg
     this.codeActUrl = codeActUrl
     this.references = references
-    this.commitMade = commitMade
 
     const learningTab = document.createElement('div')
     learningTab.classList.add('tab')
@@ -367,6 +366,7 @@ function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUr
         codeActivity.classList.add('codeActivity')
         codeActivity.innerText = 'code activity'
         codeActivity.href = this.codeActUrl
+        codeActivity.target = '_blank'
         learningView.appendChild(codeActivity)
 
         const resourcesTitle = document.createElement('h4')
@@ -385,14 +385,10 @@ function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUr
             referenceNode.classList.add('referenceNode')
             referenceNode.innerText = reference
             referenceNode.href = reference
+            referenceNode.target = '_blank'
             referencesDiv.appendChild(referenceNode)
 
         }
-
-        const commitMade = document.createElement('h4')
-        commitMade.classList.add('commitMade')
-        commitMade.innerText = `commit made; ${this.commitMade}`
-        learningView.appendChild(commitMade)
 
         return learningView
 
@@ -411,7 +407,7 @@ prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab()
 import { todoListTask } from './tabs/tasks/todoList/todoListTask';
 todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView());
 
-import { asynchronousJsCallbacks } from './tabs/learnings/asynchronousJsCallbacks/asynchronousJsCallbacks';
+import { asynchronousJsCallbacks } from './tabs/learnings/asynchronousJsCallbacks/asynchronousJsCallbacksLearning';
 asynchronousJsCallbacks.appendLearning(asynchronousJsCallbacks.createLearningTab(), asynchronousJsCallbacks.createLearningView())
 
 const lessonViews = document.querySelectorAll('.lessonView')

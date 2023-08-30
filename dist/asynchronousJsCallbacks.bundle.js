@@ -1,0 +1,1 @@
+(()=>{var o;console.log(1),o=function(){console.log(3)},setTimeout((()=>{console.log(2),o()}),2e3),new Promise(((o,e)=>{e({value:"false",message:":("})})).then((o=>{console.log(o)})).catch((o=>{console.log(o.value)}))})();

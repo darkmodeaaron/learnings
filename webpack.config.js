@@ -4,6 +4,7 @@ module.exports = {
   entry: { 
     home: './src/index.js',
     todoList: './src/tabs/tasks/todoList/todoList.js',
+    asynchronousJsCallbacks: './src/tabs/learnings/asynchronousJsCallbacks/asynchronousJsCallbacks.js'
   },
   output: {
     filename: "[name].bundle.js",

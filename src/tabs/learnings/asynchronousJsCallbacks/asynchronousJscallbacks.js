@@ -1,5 +1,48 @@
-import { Learning } from "../../..";
+function first() {
+    console.log(1)
+}
 
-const references = ['www.google.com', 'www.youtube.com', 'https://www.w3schools.com/js/js_arrays.asp']
+// function that takes in another function as a parameter 
+function second(callback) {
+    setTimeout(() => {
+        // once setTimeout is finished script will log '2' 
+        console.log(2)
+        // call back is then called to execute '1 2 3' in order
+        callback()
+    }, 2000);
+}
 
-export const asynchronousJsCallbacks = new Learning('00.00.00', 'asynchronous javascript; callbacks', 'lorem ip' ,'/src/noteImages/placeholder.png', '/src/noteImages/placeholder.png', 'index.html', references ,'00.00.00')
+function third() {
+    console.log(3)
+}
+
+first()
+second(third)
+
+const a = false
+const b = true
+
+const promise = new Promise((resolve, reject) => {
+    if (!a) {
+        reject({
+            value: 'false',
+            message: ':('
+        })    
+    } else if (!b) {
+        reject({
+            value: 'false',
+            message: ':('
+        })    
+    } else {
+        resolve(':)')
+    }
+})
+
+// if a == true .then() will run. 'message' signifies resolve value!
+promise.then((message) => {
+    console.log(message)
+})
+// if a or b == false .catch() will run
+.catch((err) => {
+    console.log(err.value)
+})
