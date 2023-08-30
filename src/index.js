@@ -271,7 +271,7 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
 }
 
-function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUrl, commitMade) {
+function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUrl, references ,commitMade) {
 
     this.tabDate = tabDate
     this.tabTitle = tabTitle
@@ -279,6 +279,7 @@ function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUr
     this.noteImage = noteImg
     this.psuedoImg = psuedoImg
     this.codeActUrl = codeActUrl
+    this.references = references
     this.commitMade = commitMade
 
     const learningTab = document.createElement('div')
@@ -367,6 +368,26 @@ function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUr
         codeActivity.innerText = 'code activity'
         codeActivity.href = this.codeActUrl
         learningView.appendChild(codeActivity)
+
+        const resourcesTitle = document.createElement('h4')
+        resourcesTitle.classList.add('resourcesTitle')
+        resourcesTitle.innerText = 'resources'
+        learningView.appendChild(resourcesTitle)
+
+        const referencesDiv = document.createElement('div')
+        referencesDiv.classList.add('referencesDiv')
+        learningView.appendChild(referencesDiv)
+
+
+        for (let reference of this.references) {
+            
+            let referenceNode = document.createElement('a')
+            referenceNode.classList.add('referenceNode')
+            referenceNode.innerText = reference
+            referenceNode.href = reference
+            referencesDiv.appendChild(referenceNode)
+
+        }
 
         const commitMade = document.createElement('h4')
         commitMade.classList.add('commitMade')

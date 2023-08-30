@@ -21,6 +21,7 @@
 
 .noteTitle {
     font-size: 12px;
+    text-decoration: underline;
 }
 
 .noteImage {
@@ -73,12 +74,12 @@
 }
 
 .codeActivity {
-    text-decoration: underline;
     text-underline-offset: 1px;
     display: block;
     font-size: 12px;
-    color: black;
+    color: blue;
     font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .codeActivity:visited {
@@ -86,11 +87,37 @@
     text-underline-offset: 1px;
     display: block;
     font-size: 12px;
-    color: black;
+    color: blue;
     font-weight: 600;
 }
 
 .learningPost {
     font-size: 12px;
     margin-bottom: 15px;
+}
+
+.resourcesTitle {
+    font-size: 12px;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.referencesDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.referenceNode {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: blue;
+    font-weight: 600;
+}
+
+.referenceNode:last-child {
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
 }
