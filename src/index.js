@@ -410,6 +410,9 @@ todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskVie
 import { asynchronousJsCallbacks } from './tabs/learnings/asynchronousJsCallbacks/asynchronousJsCallbacksLearning';
 asynchronousJsCallbacks.appendLearning(asynchronousJsCallbacks.createLearningTab(), asynchronousJsCallbacks.createLearningView())
 
+import { apiLearning } from './tabs/learnings/api\'s/apisLearning';
+apiLearning.appendLearning(apiLearning.createLearningTab(), apiLearning.createLearningView())
+
 const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')
 
