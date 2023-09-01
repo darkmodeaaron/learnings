@@ -7,6 +7,8 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=EAbi77aOadSkd7VGMMRNhZUc9
     img.src = response.data.images.original.url;
 })
 
+const body = document.querySelector('.apiBody')
+
 const img = document.querySelector('img')
 img.style.width = '500px'
 
@@ -23,9 +25,21 @@ newGifBtn.addEventListener('click', () => {
     .then(function(response) {
         return (response.json());
     })
-    .then(function(response) {
+    .then(function(response) { 
         img.src = response.data.images.original.url;
+    })
+    // if error occurs .catch() will produce default gif
+    .catch(function() {
+        console.log('err')
+        fetch(`https://api.giphy.com/v1/gifs/translate?api_key=EAbi77aOadSkd7VGMMRNhZUc973PGS2W&s=error`, {mode: 'cors'})
+        .then(function(response) {
+            return (response.json());
+        })
+        .then(function(response) {
+            img.src = response.data.images.original.url;
+        })
     })
 
     searchInput.value = ''
+
 })
