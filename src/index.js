@@ -401,6 +401,82 @@ function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUr
 
 }
 
+export function Blog(tabDate, tabTitle, blogPost) {
+
+    this.tabDate = tabDate
+    this.tabTitle = tabTitle
+    this.blogPost = blogPost
+
+    const blogTab = document.createElement('div')
+    blogTab.classList.add('tab')
+    const blogView = document.createElement('div')
+    blogView.classList.add('taskView')
+    blogView.style.display = 'none'
+
+    blogTab.addEventListener('click', (e) => {
+       
+        if (e.target.classList.contains('tabTitle')) {
+            blogView.style.display = 'block'
+            visible = 'true'
+            returnBtnVisible()
+            tabs.style.display = 'none'
+        }
+
+    })
+
+    this.createBlogTab = function() {
+
+        const tabType = document.createElement('h4')
+        tabType.classList.add('tabType')
+        tabType.innerText = 'post'
+        blogTab.appendChild(tabType)
+        
+        const blogTabDate = document.createElement('h4')
+        blogTabDate.classList.add("tabDate")
+        blogTabDate.innerText = this.tabDate
+        blogTab.appendChild(blogTabDate)
+
+        const blogTabTitle = document.createElement('h4')
+        blogTabTitle.classList.add("tabTitle")
+        blogTabTitle.innerText = this.tabTitle
+        blogTab.appendChild(blogTabTitle)
+
+        return blogTab
+
+    }
+
+    this.createBlogView = function() {
+
+        const blogViewHeader = document.createElement('div')
+        blogViewHeader.classList.add('lessonViewHeader', 'tab')
+        blogView.appendChild(blogViewHeader)
+
+        const blogViewHeaderDate = document.createElement('h4')
+        blogViewHeaderDate.classList.add('exampleViewHeaderDate')
+        blogViewHeaderDate.innerText = this.tabDate
+        blogViewHeader.appendChild(blogViewHeaderDate)
+
+        const blogViewHeaderTitle = document.createElement('h4')
+        blogViewHeaderTitle.classList.add('lessonViewHeaderTitle')
+        blogViewHeaderTitle.innerText = this.tabTitle
+        blogViewHeader.appendChild(blogViewHeaderTitle)
+
+        const blogPost = document.createElement('h4');
+        blogPost.classList.add('learningPost')
+        blogPost.innerText = this.blogPost
+        blogView.appendChild(blogPost)
+
+        return blogView
+
+    }
+
+    this.appendBlog = function(tab, view) {
+        tabs.prepend(tab)
+        views.appendChild(view)
+    }
+
+}
+
 import { prototypesAndInheritance } from './tabs/learnings/prototypesAndInheritance.js';
 prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView());
 
@@ -412,6 +488,9 @@ asynchronousJsCallbacks.appendLearning(asynchronousJsCallbacks.createLearningTab
 
 import { apiLearning } from './tabs/learnings/api\'s/apisLearning';
 apiLearning.appendLearning(apiLearning.createLearningTab(), apiLearning.createLearningView())
+
+import { blog1 } from './tabs/blogs/blog1';
+blog1.appendBlog(blog1.createBlogTab(), blog1.createBlogView())
 
 const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')
