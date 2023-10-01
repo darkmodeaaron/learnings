@@ -1,10 +1,7 @@
 import './scss/main.scss';
 
-import { appendOopPrinciplesTab } from './tabs/learnings/oop-principles';
-import { appendOopPrinciplesView } from './tabs/learnings/oop-principles';
-import { oopPrinciplesLink } from './tabs/learnings/oop-principles';
-import { oopPrinciplesView } from './tabs/learnings/oop-principles';
-import { oopPrinciplesViewVisible } from './tabs/learnings/oop-principles';
+
+
 
 //
 
@@ -27,163 +24,7 @@ function returnBtnVisible() {
 
 returnBtnVisible()
 
-function createViewNoteTitle(view) {
-    const noteTitle = document.createElement('h4')
-    noteTitle.classList.add('noteTitle')
-    noteTitle.innerHTML = 'notes'
-    view.appendChild(noteTitle)
-}
-
-function createViewNoteImage(imageSrc, view) {
-    const noteImage = document.createElement('img')
-    noteImage.classList.add('noteImage')
-    noteImage.src = imageSrc
-    view.appendChild(noteImage)
-}
-
-function createViewCodeTitle(view) {
-    const codeTitle = document.createElement('h4')
-    codeTitle.classList.add('codeTitle')
-    codeTitle.innerText = 'code activity'
-    view.appendChild(codeTitle)
-}
-
-function createViewCodeLog(log, view) {
-    const codeLog = document.createElement('h4')
-    codeLog.classList.add('codeLog')
-    codeLog.innerText = log
-    view.appendChild(codeLog)
-}
-
-function createCommitMade(date, view) {
-    const commitMade = document.createElement('h4')
-    commitMade.classList.add('commitMade')
-    commitMade.innerText = `commit made: ${date}`
-    view.appendChild(commitMade)
-}
-
-export {createViewNoteTitle}
-export {createViewNoteImage}
-export {createViewCodeTitle}
-export {createViewCodeLog}
-export {createCommitMade}
-
 //
-
-appendOopPrinciplesTab()
-appendOopPrinciplesView()
-
-oopPrinciplesLink.addEventListener('click', () => {
-    tabs.style.display = 'none'
-    oopPrinciplesView.style.display = 'block'
-    visible = 'true'
-    oopPrinciplesViewVisible = 'true'
-    returnBtnVisible()
-})
-
-//
-
-function Lesson(lessonTabDate, lessonTabTitle, lessonViewDate, lessonViewTitle, noteImage, codeLog, commitMade) {
-
-    this.lessonTabDate = lessonTabDate
-    this.lessonTabTitle = lessonTabTitle
-    this.lessonViewDate = lessonViewDate
-    this.lessonViewTitle = lessonViewTitle
-    this.noteTitle = 'notes'
-    this.noteImage = noteImage
-    this.codeTitle = 'code activity'
-    this.codeLog = codeLog
-    this.commitMade = `commit made: ${commitMade}`
-    
-    const lessonTab = document.createElement('div')
-    lessonTab.classList.add('lessonTab', 'tab')
-
-    lessonTab.addEventListener('click', (e) => {
-       
-        if (e.target.classList.contains('tabTitle')) {
-            lessonView.style.display = 'block'
-            visible = 'true'
-            returnBtnVisible()
-            tabs.style.display = 'none'
-        }
-
-    })
-
-    this.createLessonTab = function() {
-
-        const tabType = document.createElement('h4')
-        tabType.classList.add('tabType')
-        tabType.innerText = 'learnings'
-        lessonTab.appendChild(tabType)
-
-        const tabDate = document.createElement('h4')
-        tabDate.classList.add('tabDate')
-        tabDate.innerText = this.lessonTabDate
-        lessonTab.appendChild(tabDate)
-
-        const tabTitle = document.createElement('h4')
-        tabTitle.classList.add('tabTitle')
-        tabTitle.innerText = this.lessonTabTitle
-        lessonTab.appendChild(tabTitle)
-
-        return lessonTab
-
-    }
-
-    const lessonView = document.createElement('div')
-    lessonView.classList.add('lessonView')
-    lessonView.style.display = 'none'
-
-    this.createLessonView = function() {
-
-        const lessonViewHeader = document.createElement('div')
-        lessonViewHeader.classList.add('lessonViewHeader', 'tab')
-        lessonView.appendChild(lessonViewHeader)
-
-        const lessonViewHeaderDate = document.createElement('h4')
-        lessonViewHeaderDate.classList.add('exampleViewHeaderDate')
-        lessonViewHeaderDate.innerText = this.lessonViewDate
-        lessonViewHeader.appendChild(lessonViewHeaderDate)
-
-        const lessonViewHeaderTitle = document.createElement('h4')
-        lessonViewHeaderTitle.classList.add('lessonViewHeaderTitle')
-        lessonViewHeaderTitle.innerText = this.lessonViewTitle
-        lessonViewHeader.appendChild(lessonViewHeaderTitle)
-
-        const notesTitle = document.createElement('h4')
-        notesTitle.classList.add('noteTitle')
-        notesTitle.innerText = this.noteTitle
-        lessonView.appendChild(notesTitle)
-
-        const noteImg = document.createElement('img')
-        noteImg.classList.add('noteImage')
-        noteImg.src = this.noteImage
-        lessonView.appendChild(noteImg)
-
-        const lessonCodeTitle = document.createElement('h4')
-        lessonCodeTitle.classList.add('lessonCodeTitle', 'codeTitle')
-        lessonCodeTitle.innerText = this.codeTitle
-        lessonView.appendChild(lessonCodeTitle)
-
-        const lessonCodeLog = document.createElement('h4')
-        lessonCodeLog.classList.add('codeLog')
-        lessonCodeLog.innerText = this.codeLog
-        lessonView.appendChild(lessonCodeLog)
-
-        const lessonCommitMade = document.createElement('h4')
-        lessonCommitMade.classList.add('commitMade')
-        lessonCommitMade.innerText = this.commitMade
-        lessonView.appendChild(lessonCommitMade)
-
-        return lessonView
-
-    }
-
-    this.appendLesson = function(tab, view) {
-        views.appendChild(view)
-        tabs.prepend(tab)
-    }
-}
 
 function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
@@ -271,138 +112,9 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
 
 }
 
-function Learning(tabDate, tabTitle, learningPost ,noteImg, psuedoImg, codeActUrl, references) {
+export function Blog(tabType, tabDate, tabTitle, blogPost) {
 
-    this.tabDate = tabDate
-    this.tabTitle = tabTitle
-    this.learningPost = learningPost
-    this.noteImage = noteImg
-    this.psuedoImg = psuedoImg
-    this.codeActUrl = codeActUrl
-    this.references = references
-
-    const learningTab = document.createElement('div')
-    learningTab.classList.add('tab')
-    const learningView = document.createElement('div')
-    learningView.classList.add('taskView')
-    learningView.style.display = 'none'
-
-
-
-    learningTab.addEventListener('click', (e) => {
-       
-        if (e.target.classList.contains('tabTitle')) {
-            learningView.style.display = 'block'
-            visible = 'true'
-            returnBtnVisible()
-            tabs.style.display = 'none'
-        }
-
-    })
-
-    this.createLearningTab = function() {
-
-        const tabType = document.createElement('h4')
-        tabType.classList.add('tabType')
-        tabType.innerText = 'learning'
-        learningTab.appendChild(tabType)
-        
-        const learningTabDate = document.createElement('h4')
-        learningTabDate.classList.add("tabDate")
-        learningTabDate.innerText = this.tabDate
-        learningTab.appendChild(learningTabDate)
-
-        const learningTabTitle = document.createElement('h4')
-        learningTabTitle.classList.add("tabTitle")
-        learningTabTitle.innerText = this.tabTitle
-        learningTab.appendChild(learningTabTitle)
-
-        return learningTab
-
-    }
-
-    this.createLearningView = function() {
-
-        const learningViewHeader = document.createElement('div')
-        learningViewHeader.classList.add('lessonViewHeader', 'tab')
-        learningView.appendChild(learningViewHeader)
-
-        const learningViewHeaderDate = document.createElement('h4')
-        learningViewHeaderDate.classList.add('exampleViewHeaderDate')
-        learningViewHeaderDate.innerText = this.tabDate
-        learningViewHeader.appendChild(learningViewHeaderDate)
-
-        const learningViewHeaderTitle = document.createElement('h4')
-        learningViewHeaderTitle.classList.add('lessonViewHeaderTitle')
-        learningViewHeaderTitle.innerText = this.tabTitle
-        learningViewHeader.appendChild(learningViewHeaderTitle)
-
-        const learningPost = document.createElement('h4');
-        learningPost.classList.add('learningPost')
-        learningPost.innerText = this.learningPost
-        learningView.appendChild(learningPost)
-
-        const notesTitle = document.createElement('h4')
-        notesTitle.classList.add('noteTitle')
-        notesTitle.innerText = 'notes'
-        learningView.appendChild(notesTitle)
-
-        const noteImg = document.createElement('img')
-        noteImg.classList.add('noteImage')
-        noteImg.src = this.noteImage
-        learningView.appendChild(noteImg)
-
-        const psuedoTitle = document.createElement('h4')
-        psuedoTitle.classList.add('noteTitle')
-        psuedoTitle.innerText = 'psuedo'
-        learningView.appendChild(psuedoTitle)
-
-        const psuedoImg = document.createElement('img')
-        psuedoImg.classList.add('noteImage')
-        psuedoImg.src = this.psuedoImg
-        learningView.appendChild(psuedoImg)
-
-        const codeActivity = document.createElement('a')
-        codeActivity.classList.add('codeActivity')
-        codeActivity.innerText = 'code activity'
-        codeActivity.href = this.codeActUrl
-        codeActivity.target = '_blank'
-        learningView.appendChild(codeActivity)
-
-        const resourcesTitle = document.createElement('h4')
-        resourcesTitle.classList.add('resourcesTitle')
-        resourcesTitle.innerText = 'resources'
-        learningView.appendChild(resourcesTitle)
-
-        const referencesDiv = document.createElement('div')
-        referencesDiv.classList.add('referencesDiv')
-        learningView.appendChild(referencesDiv)
-
-
-        for (let reference of this.references) {
-            
-            let referenceNode = document.createElement('a')
-            referenceNode.classList.add('referenceNode')
-            referenceNode.innerText = reference
-            referenceNode.href = reference
-            referenceNode.target = '_blank'
-            referencesDiv.appendChild(referenceNode)
-
-        }
-
-        return learningView
-
-    }
-
-    this.appendLearning = function(tab, view) {
-        tabs.prepend(tab)
-        views.appendChild(view)
-    }
-
-}
-
-export function Blog(tabDate, tabTitle, blogPost) {
-
+    this.tabType = tabType
     this.tabDate = tabDate
     this.tabTitle = tabTitle
     this.blogPost = blogPost
@@ -428,7 +140,7 @@ export function Blog(tabDate, tabTitle, blogPost) {
 
         const tabType = document.createElement('h4')
         tabType.classList.add('tabType')
-        tabType.innerText = 'post'
+        tabType.innerText = this.tabType
         blogTab.appendChild(tabType)
         
         const blogTabDate = document.createElement('h4')
@@ -477,20 +189,86 @@ export function Blog(tabDate, tabTitle, blogPost) {
 
 }
 
-import { prototypesAndInheritance } from './tabs/learnings/prototypesAndInheritance.js';
-prototypesAndInheritance.appendLesson(prototypesAndInheritance.createLessonTab(), prototypesAndInheritance.createLessonView());
+export function Welcome(tabTitle, blogPost) {
 
-import { todoListTask } from './tabs/tasks/todoList/todoListTask';
-todoListTask.appendTask(todoListTask.createTaskTab(), todoListTask.createTaskView());
+    this.tabTitle = tabTitle
+    this.blogPost = blogPost
 
-import { asynchronousJsCallbacks } from './tabs/learnings/asynchronousJsCallbacks/asynchronousJsCallbacksLearning';
-asynchronousJsCallbacks.appendLearning(asynchronousJsCallbacks.createLearningTab(), asynchronousJsCallbacks.createLearningView())
+    const blogTab = document.createElement('div')
+    blogTab.classList.add('tab')
+    const blogView = document.createElement('div')
+    blogView.classList.add('taskView')
+    blogView.style.display = 'none'
 
-import { apiLearning } from './tabs/learnings/api\'s/apisLearning';
-apiLearning.appendLearning(apiLearning.createLearningTab(), apiLearning.createLearningView())
+    blogTab.addEventListener('click', (e) => {
+       
+        if (e.target.classList.contains('tabTitle')) {
+            blogView.style.display = 'block'
+            visible = 'true'
+            returnBtnVisible()
+            tabs.style.display = 'none'
+        }
 
-import { blog1 } from './tabs/blogs/blog1';
-blog1.appendBlog(blog1.createBlogTab(), blog1.createBlogView())
+    })
+
+    this.createWelcomeTab = function() {
+
+        const pinnedImg = document.createElement('img')
+        pinnedImg.src = '/src/noteImages/pinned.png'
+        pinnedImg.style.height = '12px'
+        blogTab.appendChild(pinnedImg)
+
+        const blogTabTitle = document.createElement('h4')
+        blogTabTitle.classList.add("tabTitle")
+        blogTabTitle.innerText = this.tabTitle
+        blogTab.appendChild(blogTabTitle)
+
+        return blogTab
+
+    }
+
+    this.createWelcomeView = function() {
+
+        const blogViewHeader = document.createElement('div')
+        blogViewHeader.classList.add('lessonViewHeader', 'tab')
+        blogView.appendChild(blogViewHeader)
+
+        const pinnedImg = document.createElement('img')
+        pinnedImg.src = '/src/noteImages/pinned.png'
+        pinnedImg.style.height = '12px'
+        blogViewHeader.appendChild(pinnedImg)
+
+        const blogTabTitle = document.createElement('h4')
+        blogTabTitle.classList.add("tabTitle")
+        blogTabTitle.innerText = this.tabTitle
+        blogViewHeader.appendChild(blogTabTitle)
+
+        const blogPost = document.createElement('h4');
+        blogPost.classList.add('learningPost')
+        blogPost.innerText = this.blogPost
+        blogView.appendChild(blogPost)
+
+        return blogView
+
+    }
+
+    this.appendWelcome = function(tab, view) {
+        tabs.prepend(tab)
+        views.appendChild(view)
+    }
+
+}
+
+
+
+const reactOnePost = "due to the sheer number of times its requested on job applications, today i started to learn react. understanding libraries and frameworks seems like a big step forward in terms of learning web development so i’m excited and eager to get into it. \n\n main takeaways\n. setting up a react environment using vite \n. introduction to react components, what they are and why they are beneficial to developers.\n. how to create and import new components into main.jsx\n. what jsx is and the differences to html\n\nfrom my limited knowledge of react, i like the idea around separating code into components to keep it as clean and readable as possible. i feel like i already attempt to do this when i write css. usually i create scss files for the header section of a website and another for the main etc etc. i find this helps when navigating files.\n\nmore of a deep dive into jsx next i think.\n\nthanks for reading,\naaron"
+const reactOne = new Blog ('learning', '01.10.23', 'react intro', reactOnePost)
+
+reactOne.appendBlog(reactOne.createBlogTab(), reactOne.createBlogView())
+
+const welcomePost = "hi there, \n\n welcome to my learnings repository! \n\n this is a place where i can show what i've been learning, what i've been creating and some thoughts of mine throughout my journey. please have a look around to see the programming side of me. \n\n p.s the return button is in the top right hand corner." 
+const welcome = new Welcome('welcome', welcomePost)
+welcome.appendWelcome(welcome.createWelcomeTab(), welcome.createWelcomeView())
 
 const lessonViews = document.querySelectorAll('.lessonView')
 const taskViews = document.querySelectorAll('.taskView')
@@ -498,10 +276,7 @@ const taskViews = document.querySelectorAll('.taskView')
 returnBtn.addEventListener('click', () => {
     visible = 'false'
     tabs.style.display = 'block'
-    if (oopPrinciplesViewVisible === 'true') {
-        oopPrinciplesView.style.display = 'none'
-        oopPrinciplesViewVisible = 'false'
-    } 
+
     lessonViews.forEach(lesson => {
         lesson.style.display = 'none'
     })
@@ -511,12 +286,4 @@ returnBtn.addEventListener('click', () => {
     returnBtnVisible()
 })
 
-export {Lesson}
 export {Task}
-export {Learning}
-
-
-
-
-
-

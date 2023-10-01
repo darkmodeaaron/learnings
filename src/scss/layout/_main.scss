@@ -7,13 +7,21 @@
 
 .link {
     cursor: pointer;
+    font-weight: 500;
+}
+
+.date {
+    font-weight: 500;
 }
 
 .returnBtn {
-    position: absolute;
+    position: fixed;
     top: 20px;
+    right: 20px;
     right: 10px;
     display: none;
+    padding: 1px 3px;
+    cursor: pointer;
 }
 
 
@@ -22,6 +30,7 @@
 .noteTitle {
     font-size: 12px;
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .noteImage {
@@ -56,6 +65,8 @@
 
 .tabTitle {
     cursor: pointer;
+    font-weight: 300;
+    text-decoration: underline;
 }
 
 .taskLink {
@@ -67,10 +78,12 @@
 
 .tabType {
     width: 50px;
+    font-weight: 500;
 }
 
 .tabDate {
     width: 50px;
+    font-weight: 500;
 }
 
 .codeActivity {
@@ -80,6 +93,7 @@
     color: blue;
     font-weight: 600;
     margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .codeActivity:visited {
@@ -88,7 +102,7 @@
     display: block;
     font-size: 12px;
     color: blue;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .learningPost {
@@ -100,6 +114,7 @@
     font-size: 12px;
     text-decoration: underline;
     margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .referencesDiv {
@@ -112,6 +127,7 @@
     margin-bottom: 7.5px;
     color: blue;
     font-weight: 600;
+    font-weight: 500;
 }
 
 .referenceNode:last-child {
@@ -124,4 +140,16 @@ a {
 
 .lessonViewHeader {
     width: fit-content;
+}
+
+.lessonViewHeaderTitle {
+    font-weight: 500;
+}
+
+.learningPost {
+    font-weight: 300;
+}
+
+.exampleViewHeaderDate {
+    font-weight: 500;
 }
