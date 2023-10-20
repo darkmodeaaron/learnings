@@ -1,0 +1,5 @@
+import { Blog } from "..";
+
+const blog = 'i’ve recently completed my first small project using react, a landing page for a clothes web-store. i wanted it to feature a few components that regularly appear on retail websites. these included a responsive nav and an image carousel.\n\n even though there is still a lot to learn i feel i understand the power of creating ui using react. the ability to create components to be reused can simplify building parts of a website.\n\n the design was heavily based of the nudiejeans.com website. this website also featured a ui component that would quickly allow users to view what models in the product images were wearing. i thought this would be a fun component to recreate. i felt whilst making this i was able to fully see the capabilities of react with components having there own independent states. \n\n thanks for reading,\n aaron'
+
+export const blogPost201023 = new Blog('blog', '20.10.23', 'learning react and projects...', blog, 'https://aclothesstore.aaronroberts.dev/')

@@ -1,8 +1,6 @@
 import './scss/main.scss';
 
 
-
-
 //
 
 export const content = document.querySelector('#content')
@@ -23,6 +21,7 @@ function returnBtnVisible() {
 }
 
 returnBtnVisible()
+
 
 //
 
@@ -226,7 +225,7 @@ export function Welcome(tabTitle, blogPost) {
     this.createWelcomeTab = function() {
 
         const pinnedImg = document.createElement('img')
-        pinnedImg.src = '/src/noteImages/pinned.png'
+        pinnedImg.src = '/src/images/pinned.png'
         pinnedImg.style.height = '12px'
         blogTab.appendChild(pinnedImg)
 
@@ -271,6 +270,9 @@ export function Welcome(tabTitle, blogPost) {
 
 }
 
+// POST IMPORTS
+
+import { blogPost201023 } from './blogs/blogPost201023';
 
 
 const reactOnePost = "due to the sheer number of times its requested on job applications, today i started to learn react. understanding libraries and frameworks seems like a big step forward in terms of learning web development so i’m excited and eager to get into it. \n\n main takeaways\n. setting up a react environment using vite. \n. introduction to react components, what they are and why they are beneficial to developers.\n. how to create and import new components into main.jsx.\n. what jsx is and the differences to html.\n\nfrom my limited knowledge of react, i like the idea around separating code into components to keep it as clean and readable as possible. i feel like i already attempt to do this when i write css. usually i create scss files for the header section of a website and another for the main etc etc. i find this helps when navigating files.\n\nmore of a deep dive into jsx next i think.\n\nthanks for reading,\naaron"
@@ -282,8 +284,10 @@ const reactTwo = new Blog ('learning', '03.10.23', 'creating a simple header wit
 reactTwo.appendBlog(reactTwo.createBlogTab(), reactTwo.createBlogView())
 
 const reactThreePost = "over the past couple days i feel like i’ve made some pretty good steps forward with react. i set out to create a simple header section of a website a give it some minor functionality in a dropdown menu. \n\nthis led me to dive more into usestate hooks and passing functionality and variables between components using props.\n\ntook me some time but got there in the end. will work on making it responsive with a mobile view next.\n\nthanks for reading,\naaron"
-const reactThree = new Blog ('learning', '05.10.23', 'creating a simple header with dropdown menu functionality with react', reactThreePost, 'https://learning031023.aaronroberts.dev/')
+const reactThree = new Blog ('learning', '05.10.23', 'creating a simple header with dropdown menu functionality with react', reactThreePost, 'https://learning051023.aaronroberts.dev/')
 reactThree.appendBlog(reactThree.createBlogTab(), reactThree.createBlogView())
+
+blogPost201023.appendBlog(blogPost201023.createBlogTab(), blogPost201023.createBlogView())
 
 //
 
