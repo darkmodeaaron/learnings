@@ -25,12 +25,12 @@ returnBtnVisible()
 
 //
 
-function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
+function Task(taskTabDate, taskTabTitle, taskViewLink, taskDescription, status) {
 
     this.taskTabDate = taskTabDate
     this.taskTabTitle = taskTabTitle
     this.taskViewLink = taskViewLink
-    this.linkHref = linkHref
+    this.taskDescription = taskDescription
     this.status = status
     const taskTab = document.createElement('div')
     taskTab.classList.add('tab')
@@ -94,10 +94,15 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, linkHref, status) {
         taskViewHeaderTitle.innerText = this.taskTabTitle
         taskViewHeader.appendChild(taskViewHeaderTitle)
 
+        const taskDescription = document.createElement('p')
+        taskDescription.classList.add('taskDescription')
+        taskDescription.innerText = this.taskDescription
+        taskView.appendChild(taskDescription)
+
         const taskLink = document.createElement('a')
         taskLink.classList.add('taskLink')
         taskLink.innerText = this.taskViewLink
-        taskLink.href = this.linkHref
+        taskLink.href = this.taskViewLink
         taskView.appendChild(taskLink)
 
         return taskView
@@ -245,7 +250,7 @@ export function Welcome(tabTitle, blogPost) {
         blogView.appendChild(blogViewHeader)
 
         const pinnedImg = document.createElement('img')
-        pinnedImg.src = '/src/noteImages/pinned.png'
+        pinnedImg.src = '/src/images/pinned.png'
         pinnedImg.style.height = '12px'
         blogViewHeader.appendChild(pinnedImg)
 
@@ -273,6 +278,7 @@ export function Welcome(tabTitle, blogPost) {
 // POST IMPORTS
 
 import { blogPost201023 } from './blogs/blogPost201023';
+import { todoTask } from './tasks/todoList';
 
 
 const reactOnePost = "due to the sheer number of times its requested on job applications, today i started to learn react. understanding libraries and frameworks seems like a big step forward in terms of learning web development so i’m excited and eager to get into it. \n\n main takeaways\n. setting up a react environment using vite. \n. introduction to react components, what they are and why they are beneficial to developers.\n. how to create and import new components into main.jsx.\n. what jsx is and the differences to html.\n\nfrom my limited knowledge of react, i like the idea around separating code into components to keep it as clean and readable as possible. i feel like i already attempt to do this when i write css. usually i create scss files for the header section of a website and another for the main etc etc. i find this helps when navigating files.\n\nmore of a deep dive into jsx next i think.\n\nthanks for reading,\naaron"
@@ -288,6 +294,8 @@ const reactThree = new Blog ('learning', '05.10.23', 'creating a simple header w
 reactThree.appendBlog(reactThree.createBlogTab(), reactThree.createBlogView())
 
 blogPost201023.appendBlog(blogPost201023.createBlogTab(), blogPost201023.createBlogView())
+todoTask.appendTask(todoTask.createTaskTab(), todoTask.createTaskView())
+
 
 //
 
