@@ -1,0 +1,23 @@
+:root {
+    --body: white;
+    --wrapper: #fefefe;
+    --font: black;
+    --navFont: #fff;
+    --mode: #7C8BDC;
+    --shadow: rgb(230, 230, 230);
+    --gitdark: black;
+    --gitlight: #fff;
+    --dummy: #fff;
+}
+
+.darkmode {
+    --body: black;
+    --wrapper: #161616;
+    --font: #cbcbcb;
+    --navFont: #cbcbcb;
+    --mode: #855BDE;
+    --shadow: rgb(70, 70, 70);
+    --gitdark: #cbcbcb;
+    --gitlight: #cbcbcb;
+    --dummy: #161616;
+}

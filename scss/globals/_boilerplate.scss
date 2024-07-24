@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--font);
+}
+
+.wrapper {
+    padding-top: 100px;
+    display: flex;
+    max-width: 1800px;
+    margin: 0 auto;
+    background-color: var(--body);
+    transition: all 100ms ease-in-out;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+@media(max-width: 800px) {
+    h1 {
+        font-size: 47.5px;
+    }
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+h5 {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.icon-wrapper {
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-wrapper img {
+    width: 100%;
+}
+
+.icon-figma-wrapper {
+    width: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-figma-wrapper img {
+    width: 100%;
+}
+
+::selection {
+    background: var(--mode); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: var(--mode); /* Gecko Browsers */
+}
+
+a {
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.gitdark {
+    fill: var(--gitdark);
+    transition: all 100ms ease-in-out;
+}
+
+.gitlight {
+    fill: var(--gitlight);
+    transition: all 100ms ease-in-out;
+}
+
+.figma-icon {
+    transition: all 100ms ease-in-out;
+}
+
+.mode-svg {
+    background-color: var(--navFont);
+    border-radius: 50%;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.mode-fill {
+    fill: var(--mode);
+    transition: all 100ms ease-in-out;
+}
+
+.ih {
+    color: var(--dummy);
+    overflow: hidden;
+    transition: all 100ms ease-in-out;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}

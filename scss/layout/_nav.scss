@@ -1,0 +1,26 @@
+.nav {
+    flex: 1;
+    padding: 40px 15px 0 15px;
+    min-width: 290px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 40px;
+    z-index: 1;
+    padding: 0 5px;
+    background-color: var(--mode);
+    border-radius: 3px;
+    transition: all 100ms ease-in-out;
+}
+
+.contact-github-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    z-index: 5;
+}
+
