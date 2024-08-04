@@ -196,55 +196,7 @@ body {
     width: 100%;
 }
 
-@media (max-width: 1200px) {
-    .left {
-        display: none;
-    }
-    .nav {
-        display: none;
-    }
-    .main {
-        margin: 0 auto;
-        
-    }
-    .wrapper {
-        padding: 100px 100px 0 100px;
-    }
-}
 
-@media (max-width: 800px) {
-    .wrapper {
-        padding: 0;
-    }
-    
-    .tp {
-        opacity: 0;
-    }
-
-    .card-details {
-        display: block;
-    }
-    .main {
-
-        width: 100%;
-        max-width: 100%;
-
-        &-contact-me-low {
-            opacity: 0;
-        }
-
-    }
-
-    .card {
-        &-img-section:hover .hovered-text {
-            opacity: 0;
-        }
-        
-        &-img-section:hover .card-img {
-            opacity: 1;
-        }
-    }
-}
 
 .contactme-inline {
     background-color: var(--mode);
@@ -256,11 +208,7 @@ body {
 
 
 
-@media (max-width: 1130px) {
-    .header-nav {
-        opacity: 1;
-    }
-}
+
 
 ///
 
@@ -334,6 +282,10 @@ body {
     margin-bottom: 15px;
 }
 
+.tab:first-of-type {
+    margin-bottom: 30px;
+}
+
 .tabTitle {
     cursor: pointer;
     font-weight: 300;
@@ -356,6 +308,7 @@ body {
 .tabDate {
     width: 50px;
     font-weight: 500;
+    font-size: 12px;
 }
 
 .codeActivity {
@@ -465,4 +418,77 @@ a {
     text-decoration: underline;
     font-size: 15px;
     cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .left {
+        display: none;
+    }
+    .nav {
+        display: none;
+    }
+    .main {
+        margin: 0 auto;
+        
+    }
+    .wrapper {
+        padding: 100px 100px 0 100px;
+    }
+    .header-nav {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .wrapper {
+        padding: 0;
+    }
+    
+    .tp {
+        opacity: 0;
+    }
+
+    .card-details {
+        display: block;
+    }
+    .main {
+
+        width: 100%;
+        max-width: 100%;
+
+        &-contact-me-low {
+            opacity: 0;
+        }
+
+    }
+
+    .card {
+        &-img-section:hover .hovered-text {
+            opacity: 0;
+        }
+        
+        &-img-section:hover .card-img {
+            opacity: 1;
+        }
+    }
+
+    .tabDate {
+        font-size: 11px;
+    }
+
+    .tabType {
+        font-size: 11px;
+    }
+
+    .tabTitle {
+        font-size: 11px;
+    }
+
+    .lessonViewHeaderTitle {
+        max-width: 200px;
+        font-size: 12px;
+    }
+    .exampleViewHeaderDate {
+        font-size: 12px;
+    }
 }

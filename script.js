@@ -112,7 +112,7 @@ function Task(taskTabDate, taskTabTitle, taskViewLink, taskDescription, status) 
         taskViewHeader.appendChild(taskViewHeaderDate)
 
         const taskViewHeaderTitle = document.createElement('h4')
-        taskViewHeaderTitle.classList.add('tabTitle')
+        taskViewHeaderTitle.classList.add('lessonViewHeaderTitle')
         taskViewHeaderTitle.innerText = this.taskTabTitle
         taskViewHeader.appendChild(taskViewHeaderTitle)
 
@@ -338,7 +338,7 @@ const reactTwo = new Blog ('learning', '03.10.23', 'creating a simple header wit
 reactTwo.appendBlog(reactTwo.createBlogTab(), reactTwo.createBlogView())
 
 const reactThreePost = "over the past couple days i feel like i’ve made some pretty good steps forward with react. i set out to create a simple header section of a website a give it some minor functionality in a dropdown menu. \n\nthis led me to dive more into usestate hooks and passing functionality and variables between components using props.\n\ntook me some time but got there in the end. will work on making it responsive with a mobile view next.\n\nthanks for reading,\naaron"
-const reactThree = new Blog ('learning', '05.10.23', 'creating a simple header with dropdown menu functionality with react', reactThreePost, 'https://learning051023.aaronroberts.dev/')
+const reactThree = new Blog ('learning', '05.10.23', 'react nav bar with dropdown menu', reactThreePost, 'https://learning051023.aaronroberts.dev/')
 reactThree.appendBlog(reactThree.createBlogTab(), reactThree.createBlogView())
 
 const blog = 'i’ve recently completed my first small project using react, a landing page for a clothes web-store. i wanted it to feature a few components that regularly appear on retail websites. these included a responsive nav and an image carousel.\n\n even though there is still a lot to learn i feel i understand the power of creating ui using react. the ability to create components to be reused can simplify building parts of a website.\n\n the design was heavily based of the nudiejeans.com website. this website also featured a ui component that would quickly allow users to view what models in the product images were wearing. i thought this would be a fun component to recreate. i felt whilst making this i was able to fully see the capabilities of react with components having there own independent states. \n\n thanks for reading,\n aaron'
@@ -352,6 +352,12 @@ const todoTaskDescription = 'after working with react for the past couple weeks 
 const todoTask = new Task('25.10.23', 'simple todo list', 'https://todolist.aaronroberts.dev/', todoTaskDescription, 'complete')
 
 todoTask.appendTask(todoTask.createTaskTab(), todoTask.createTaskView())
+
+const blog04082024 = 'I am ready to restart my search for a job in the web development arena. After a week or two of prep, debugging and redesigning, my portfolio has never looked better. It includes three projects I believe show the better side of my programming skills and hopefully my capability to learn. \n\n Moving forward I am looking to enhance my abilities in React whilst adding Typescript and Tailwind CSS to my skillset as these are featured on many many job applications. I have a few projects in my head I can create to help me learn these new skills which hopefully will not take me too long to become competent in.\n\n Also my aim is to add a new entry here every week from now. \n\n thanks for reading, \naaron'
+
+const blogPost04082024 = new Blog('blog', '04.08.24', 'Another beginning', blog04082024,)
+
+blogPost04082024.appendBlog(blogPost04082024.createBlogTab(), blogPost04082024.createBlogView())
 
 //
 
