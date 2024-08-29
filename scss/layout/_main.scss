@@ -294,13 +294,14 @@ body {
 }
 
 .taskLink {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--font);
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .tabType {
-    width: 50px;
+    width: 75px;
     font-weight: 500;
     font-size: 12px;
 }
