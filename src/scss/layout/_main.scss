@@ -1,0 +1,519 @@
+body {
+    background-color: var(--body);
+}
+
+.left {
+    flex: 1;
+    padding: 40px 20px 0 20px;
+    min-width: 290px;
+}
+
+.main {
+
+    background-color: var(--wrapper);
+    max-width: 750px;
+    padding: 40px 15px 0 15px;
+    box-shadow: 1px 10px 15px 1px var(--shadow);
+    transition: all 100ms ease-in-out;
+    position: relative;
+
+    &-h1 {
+        margin-bottom: 50px;
+    }
+
+    &-intro {
+        margin-bottom: 125px;
+        line-height: 25px;
+    }
+
+    &-skill {
+        width: 13px;
+        transition: all 100ms ease-in-out;
+    }
+
+    &-outro {
+        line-height: 20px;
+        margin-bottom: 50px;
+    }
+
+    &-contact-me-low-wrapper {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    &-contact-me-low {
+        background-color: var(--mode);
+        color: var(--navFont);
+        border-radius: 3px;
+        padding: 0 5px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+}
+
+.split {
+    width: 100%;
+    height: 1px;
+    background-color: var(--font);
+    margin-bottom: 25px;
+}
+
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    &-name {
+        font-weight: 500;
+    }
+
+    &-controller-flex {
+        margin-bottom: 25px;
+        display: flex;
+        gap: 35px;
+    }
+    
+    &-btn {
+        all: unset;
+        padding: 0px 5px;
+        border-radius: 3px;
+        border: 2px solid var(--mode);
+        color: var(--mode);
+        font-size: 12px;
+        height: 19px;
+        font-weight: 500;
+    }
+    &-btn:first-child {
+        background-color: var(--mode);
+        color: var(--body);
+
+    }
+
+    &-nav {
+        display: flex;
+        opacity: 0;
+        gap: 25px;
+    }
+
+    &-nav-left {
+        display: flex;
+        gap: 25px;
+    }
+
+    &-contact {
+        font-weight: 500;
+        z-index: 5;
+        color: var(--navFont);
+        border-radius: 3px;
+        transition: all 100ms ease-in-out;
+    }
+
+}
+
+
+
+.card {
+
+    margin-bottom: 65px;
+
+    &-header {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    &-header-flex {
+        display: flex;
+        gap: 12px;
+    }
+
+    &-details {
+        display: none;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    &-view {
+        text-decoration: underline;
+    }
+
+    &-img-section {
+        position: relative;
+        display: block;
+    }
+
+    &-img-section:hover .hovered-text {
+        opacity: 1;
+    }
+    
+    &-img-section:hover .card-img {
+        opacity: .1;
+    }
+
+    &-img {
+        box-shadow: 1px 10px 15px 1px var(--shadow);
+        border-radius: 8px;
+        transition: opacity 250ms linear;
+    }
+
+
+}
+.card:last-of-type {
+    margin-bottom: 75px;
+}
+
+
+.hovered {
+
+    &-card {
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-text {
+        max-width: 500px;
+        opacity: 0;
+        transition: opacity 250ms linear;
+        line-height: 25px;
+    }
+}
+
+.mobile-card {
+    background-color: var(--wrapper);
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+}
+.mobile-card-text {
+    max-width: 475px;
+    padding: 10px;
+}
+.exit-wrapper {
+    position: absolute;
+    width: 25px;
+    top: 25px;
+    right: 25px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.exit-wrapper img {
+    width: 100%;
+}
+
+
+
+.contactme-inline {
+    background-color: var(--mode);
+    color: var(--navFont);
+    border-radius: 3px;
+    padding: 0 5px;
+    font-weight: 500;
+}
+
+
+
+
+
+///
+
+.post {
+    display: flex;
+    gap: 25px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.link {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.date {
+    font-weight: 500;
+}
+
+.returnBtn {
+    all: unset;
+    position: absolute;
+    top: 203px;
+    right: 15px;
+    display: none;
+    padding: 1px 3px;
+    cursor: pointer;
+    background-color: var(--mode);
+    font-size: 12px;
+    color: var(--navFont);
+    border-radius: 2px;
+}
+
+
+// views
+
+.noteTitle {
+    font-size: 12px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.noteImage {
+    width: 75%;
+    margin: 15px 0px;
+}
+
+.codeTitle {
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.codeLog {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.commitMade {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+
+///// new
+
+.tab {
+    display: flex;
+    gap: 25px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.tab:first-of-type {
+    margin-bottom: 30px;
+}
+
+.tabTitle {
+    cursor: pointer;
+    font-weight: 300;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+.taskLink {
+    font-size: 11px;
+    color: var(--font);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.tabType {
+    width: 75px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.tabDate {
+    width: 50px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.codeActivity {
+    text-underline-offset: 1px;
+    display: block;
+    font-size: 12px;
+    color: blue;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.codeActivity:visited {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+    display: block;
+    font-size: 12px;
+    color: blue;
+    font-weight: 500;
+}
+
+.learningPost {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: var(--font);
+}
+
+.resourcesTitle {
+    font-size: 12px;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.referencesDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.referenceNode {
+    font-size: 12px;
+    margin-bottom: 7.5px;
+    color: blue;
+    font-weight: 600;
+    font-weight: 500;
+}
+
+.referenceNode:last-child {
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.lessonViewHeader {
+    width: fit-content;
+}
+
+.lessonViewHeaderTitle {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.learningPost {
+    font-weight: 300;
+}
+
+.exampleViewHeaderDate {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.taskDescription {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+#left {
+    flex: 1;
+    padding: 40px 20px 0 20px;
+    
+}
+
+#right {
+        flex: 1;
+        padding: 40px 20px 0 20px;
+        
+}
+
+#wrapper {
+    padding-top: 100px;
+    display: flex;
+    max-width: 1800px;
+    margin: 0 auto;
+    background-color: white;
+    transition: all 100ms ease-in-out;
+}
+
+.invis {
+    color: white;
+}
+
+.header-lr {
+    margin-bottom: 30px;
+}
+
+.welcomeTitle {
+    text-decoration: underline;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+    .left {
+        display: none;
+    }
+    .nav {
+        display: none;
+    }
+    .main {
+        margin: 0 auto;
+        
+    }
+    .wrapper {
+        padding: 100px 100px 0 100px;
+    }
+    .header-nav {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .wrapper {
+        padding: 0;
+    }
+    
+    .tp {
+        opacity: 0;
+    }
+
+    .card-details {
+        display: block;
+    }
+    .main {
+
+        width: 100%;
+        max-width: 100%;
+
+        &-contact-me-low {
+            opacity: 0;
+        }
+
+    }
+
+    .card {
+        &-img-section:hover .hovered-text {
+            opacity: 0;
+        }
+        
+        &-img-section:hover .card-img {
+            opacity: 1;
+        }
+    }
+
+    .tabDate {
+        font-size: 11px;
+    }
+
+    .tabType {
+        font-size: 11px;
+    }
+
+    .tabTitle {
+        font-size: 11px;
+    }
+
+    .lessonViewHeaderTitle {
+        max-width: 200px;
+        font-size: 12px;
+    }
+    .exampleViewHeaderDate {
+        font-size: 12px;
+    }
+}
