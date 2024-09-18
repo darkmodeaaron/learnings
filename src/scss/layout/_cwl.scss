@@ -1,0 +1,70 @@
+.cwl {
+    &-header-flex {
+        margin-bottom: 30px;
+    }
+
+    &-header {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    &-date {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    &-intro {
+        font-size: 12px;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+
+}
+
+.log {
+    background-color: var(--body);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 10px 15px 1px var(--shadow);
+    margin-bottom: 30px;
+}
+
+.logDate {
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.logIntro {
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.tasksFlex {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: 600px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.tasksHeader {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.tasks {
+    padding-left: 50px;
+    margin-bottom: 15px;
+}
+
+.task {
+    margin-bottom: 5px;
+}
+.task:last-of-type {
+    margin-bottom: 0;
+}
+

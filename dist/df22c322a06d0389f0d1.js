@@ -30,6 +30,67 @@ function returnBtnVisible() {
 
 returnBtnVisible()
 
+const cwlFeed = document.querySelector('.cwl-feed')
+
+export function LogPost(logDate, logIntro, logTasks) {
+
+    this.logDate = logDate
+    this.logIntro = logIntro
+    this.logTasks = logTasks
+
+    const log = document.createElement('div')
+    log.classList.add('log')
+
+    const ld = document.createElement('h1')
+    ld.classList.add('logDate')
+    ld.innerText = this.logDate
+    log.appendChild(ld)
+
+    const intro = document.createElement('h1')
+    intro.classList.add('logIntro')
+    intro.innerText = this.logIntro
+    log.appendChild(intro)
+
+    const tasksFlex = document.createElement('div')
+    tasksFlex.classList.add('tasksFlex')
+    log.appendChild(tasksFlex)
+
+    const tasksHeader = document.createElement('h1')
+    tasksHeader.classList.add('tasksHeader')
+    tasksHeader.innerText = 'Todays tasks;'
+    tasksFlex.appendChild(tasksHeader)
+
+    const tasks = document.createElement('ul')
+    tasks.classList.add('tasks')
+    tasksFlex.appendChild(tasks)
+
+    for (let i = 0; i < logTasks.length; i++) {
+        const task = document.createElement('li')
+        task.classList.add('task')
+        task.innerText = logTasks[i]
+        tasks.appendChild(task)
+    }
+
+    const taskSplit = document.createElement('div')
+    taskSplit.classList.add('taskSplit')
+    log.appendChild(taskSplit)    
+
+
+    this.createLog = function() {
+        cwlFeed.appendChild(log)
+    }
+}
+
+import { log290824 } from "./logs/2024/augustLogs.js"
+import { log020924 } from "./logs/2024/septemberLogs.js"
+
+const logPosts = [log020924, log290824]
+
+logPosts.forEach(log => {
+    log.createLog()
+})
+
+
 export function Blog(tabDate, tabTitle, blogPost, blogLink) {
 
     this.tabDate = tabDate
@@ -232,7 +293,7 @@ welcome.appendWelcome(welcome.createWelcomeTab(), welcome.createWelcomeView())
 const taskViews = document.querySelectorAll('.taskView')
 
 returnBtn.addEventListener('click', () => {
-
+    
     visible = 'false'
     tabs.style.display = 'block'
 
@@ -240,4 +301,53 @@ returnBtn.addEventListener('click', () => {
         view.style.display = 'none'
     })
     returnBtnVisible()
+})
+
+
+// tab switch
+
+const headerController = document.querySelector('.header-controller-flex')
+const controllerBtns = document.querySelectorAll('.header-btn')
+const bt = document.querySelector('.blog-tab')
+const cwlt = document.querySelector('.cwl-tab')
+
+
+cwlt.style.display = 'none'
+
+
+headerController.addEventListener('click', (e) => {
+
+    if (e.target.classList.contains('header-controller-flex')) {
+        return 
+    } 
+
+    
+
+    controllerBtns.forEach(btn => {
+        if (btn.classList.contains('active')) {
+            btn.classList.remove('active')
+        }
+    })
+    e.target.classList.add('active')
+    controllerBtns.forEach(btn => {
+
+        if (btn.classList.contains('header-blog-btn')) {
+            bt.style.display = 'none'
+        }
+        if (btn.classList.contains('header-blog-btn') && btn.classList.contains('active')) {
+            bt.style.display = 'block'
+        } 
+
+        if (btn.classList.contains('header-cwl-btn')) {
+            cwlt.style.display = 'none'
+        }
+        if (btn.classList.contains('header-cwl-btn') && btn.classList.contains('active')) {
+            cwlt.style.display = 'block'
+
+        } 
+
+    })
+
+    
+
 })

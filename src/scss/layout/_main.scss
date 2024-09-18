@@ -85,11 +85,11 @@ body {
         font-size: 12px;
         height: 19px;
         font-weight: 500;
+        cursor: pointer;
     }
-    &-btn:first-child {
+    &-btn.active {
         background-color: var(--mode);
         color: var(--body);
-
     }
 
     &-nav {
@@ -106,13 +106,19 @@ body {
     &-contact {
         font-weight: 500;
         z-index: 5;
-        color: var(--navFont);
+        color: var(--mode);
         border-radius: 3px;
         transition: all 100ms ease-in-out;
+        border: 2px solid;
+        padding: 1px 5px;
+    }
+    &-contact:active {
+        background-color: var(--mode);
+        color: var(--wrapper);
+        border: 2px solid var(--mode);
     }
 
 }
-
 
 
 .card {
