@@ -67,8 +67,14 @@ export function LogPost(logDate, logIntro, logTasks) {
     for (let i = 0; i < logTasks.length; i++) {
         const task = document.createElement('li')
         task.classList.add('task')
-        task.innerText = logTasks[i]
+        task.innerText = logTasks[i].task
         tasks.appendChild(task)
+
+        if (logTasks[i].complete) {
+            task.style.textDecoration = 'line-through' 
+        } else {
+            task.style.color = 'red'
+        }
     }
 
     const taskSplit = document.createElement('div')
@@ -80,16 +86,6 @@ export function LogPost(logDate, logIntro, logTasks) {
         cwlFeed.appendChild(log)
     }
 }
-
-import { log290824 } from "./logs/2024/augustLogs.js"
-import { log020924 } from "./logs/2024/septemberLogs.js"
-
-const logPosts = [log020924, log290824]
-
-logPosts.forEach(log => {
-    log.createLog()
-})
-
 
 export function Blog(tabDate, tabTitle, blogPost, blogLink) {
 
@@ -268,6 +264,21 @@ function Welcome(tabTitle, blogPost) {
 
 }
 
+// Log posts
+
+
+import { log290824 } from "./logs/2024/augustLogs.js"
+import { log020924 } from "./logs/2024/septemberLogs.js"
+import { log030924 } from "./logs/2024/septemberLogs.js"
+import { log090924 } from "./logs/2024/septemberLogs.js"
+import { log100924 } from "./logs/2024/septemberLogs.js"
+
+const logPosts = [log100924, log090924, log030924, log020924, log290824,]
+
+logPosts.forEach(log => {
+    log.createLog()
+})
+
 // Blog posts
 
 
@@ -286,6 +297,8 @@ posts.forEach(post => {
 const welcomePost = "Hi there, \n\n Welcome to my learnings repository! \n\n This is a place where I show what I've been learning, what I've been creating and some thoughts of mine throughout my journey. Please have a look around to see the programming side of me." 
 const welcome = new Welcome('Welcome', welcomePost)
 welcome.appendWelcome(welcome.createWelcomeTab(), welcome.createWelcomeView())
+
+
 
 // Return button functionality
 
@@ -343,7 +356,13 @@ headerController.addEventListener('click', (e) => {
         }
         if (btn.classList.contains('header-cwl-btn') && btn.classList.contains('active')) {
             cwlt.style.display = 'block'
-
+            visible = 'false'
+            tabs.style.display = 'block'
+        
+            taskViews.forEach(view => {
+                view.style.display = 'none'
+            })
+            returnBtnVisible()
         } 
 
     })

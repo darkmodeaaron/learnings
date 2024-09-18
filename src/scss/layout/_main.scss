@@ -66,6 +66,13 @@ body {
     justify-content: space-between;
     margin-bottom: 25px;
 
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid (--body);
+    }
+
     &-name {
         font-weight: 500;
     }
@@ -259,15 +266,20 @@ body {
 .returnBtn {
     all: unset;
     position: absolute;
-    top: 203px;
+    top: 209px;
     right: 15px;
     display: none;
-    padding: 1px 3px;
+    padding: 2px 5px;
     cursor: pointer;
-    background-color: var(--mode);
+    background-color: var(--wrapper);
     font-size: 12px;
-    color: var(--navFont);
+    color: var(--mode);
     border-radius: 2px;
+    border: 2px solid var(--mode);
+}
+.returnBtn:active {
+    background-color: var(--mode);
+    color: var(--body);
 }
 
 

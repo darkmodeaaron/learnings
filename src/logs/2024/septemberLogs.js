@@ -1,5 +1,57 @@
 import { LogPost } from "../../script";
 
-const tasks = ['fdfd', 'fdsfd']
+const tasks020924 = [
+    {
+        task: 'Complete set up of project.',
+        complete: true
+    }, 
+    {
+        task: "Start development.",
+        complete: true
+    }
+]
 
-export const log020924 = new LogPost('02.09.24', "Starting on 42 AUDIO website. Will be a simple one page info site that has a feed of content posted by the owner.", tasks)
+export const log020924 = new LogPost('02.09.24', "Starting on 42 AUDIO website. Will be a simple one page info site that has a feed of content posted by the owner.", tasks020924)
+
+const tasks030924 = [
+    {
+        task: ' Make what I created yesterday responsive.',
+        complete: true
+    }, 
+    {
+        task: "Start on how the feed will look. (spent all time on the above.)",
+        complete: false
+    }
+]
+
+export const log030924 = new LogPost('03.09.24', "Continuing on the 42 AUDIO development.", tasks030924)
+
+const tasks090924 = [
+    {
+        task: 'Make a good start on email form.',
+        complete: true
+    }
+]
+
+export const log090924 = new LogPost('09.09.24', "Continuing 42 AUDIO development.", tasks090924)
+
+const tasks100924 = [
+    {
+        task: ' Stop form from processing until its fully completed.',
+        complete: true
+    },
+    {
+        task: ' Add exit button within EmailForm component so that fields empty onClick for exit button.',
+        complete: true
+    },
+    {
+        task: "Add CTA's for features.",
+        complete: true
+    },
+    {
+        task: 'Start feed components.',
+        complete: true
+    },
+]
+
+export const log100924 = new LogPost('10.09.24', "Progressed well on email form yesterday, today just need to make a few tweaks.", tasks100924)
