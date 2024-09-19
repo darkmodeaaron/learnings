@@ -55,3 +55,16 @@ const tasks100924 = [
 ]
 
 export const log100924 = new LogPost('10.09.24', "Progressed well on email form yesterday, today just need to make a few tweaks.", tasks100924)
+
+const tasks190924 = [
+    {
+        task: 'Complete part 2 of Net Ninjas nodejs course.',
+        complete: true
+    },
+    {
+        task: 'Begin work for a searchbar app later.',
+        complete: true
+    },
+]
+
+export const log190924 = new LogPost('19.09.24', "Continue learning nodejs this morning, starting with the second video of Net Ninja's nodejs tutorial course.", tasks190924)
