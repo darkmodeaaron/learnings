@@ -82,3 +82,17 @@ const tasks230924 = [
 ]
 
 export const log230924 = new LogPost('23.09.24', "Continue learning nodejs tonight.", tasks230924)
+
+
+const tasks240924 = [
+    {
+        task: 'Complete part 5 of Net Ninjas nodejs course.',
+        complete: true
+    },
+    {
+        task: 'Complete part 6 of Net Ninjas nodejs course.',
+        complete: true
+    },
+]
+
+export const log240924 = new LogPost('24.09.24', "Continue learning nodejs.", tasks240924)
