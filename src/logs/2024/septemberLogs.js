@@ -96,3 +96,13 @@ const tasks240924 = [
 ]
 
 export const log240924 = new LogPost('24.09.24', "Continue learning nodejs.", tasks240924)
+
+const tasks260924 = [
+    {
+        task: 'Create code for img swiper on the product page.',
+        complete: true
+    },
+
+]
+
+export const log260924 = new LogPost('26.09.24', "Continuing on draft for copyright project..", tasks260924)
