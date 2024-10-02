@@ -116,3 +116,4 @@ const tasks300924 = [
 ]
 
 export const log300924 = new LogPost('30.09.24', "Continuing learning nodejs with the net ninja series on Youtbe. .", tasks300924)
+
