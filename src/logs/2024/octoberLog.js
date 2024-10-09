@@ -19,3 +19,13 @@ const tasks081024 = [
 ]
 
 export const log081024 = new LogPost('08.10.24', "The beginning of the copyrighted app. I going to work on creating the app all on the frontend. This way I can get to work then transfer to a full stack application at a later date.", tasks081024)
+
+const tasks091024 = [
+    {
+        task: 'complete search bar logic.',
+        complete: true
+    },
+
+]
+
+export const log091024 = new LogPost('08.10.24', "I started transferring ove the logic for the main feature search bar yesterday which I need to complete today. I am weary of whether the method I am using is the most optimal though.", tasks091024)
