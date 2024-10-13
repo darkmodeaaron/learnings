@@ -29,3 +29,13 @@ const tasks091024 = [
 ]
 
 export const log091024 = new LogPost('08.10.24', "I started transferring ove the logic for the main feature search bar yesterday which I need to complete today. I am weary of whether the method I am using is the most optimal though.", tasks091024)
+
+const tasks131024 = [
+    {
+        task: 'complete draft design for design page going onto the demo.',
+        complete: true
+    },
+
+]
+
+export const log131024 = new LogPost('13.10.24', "Have continued thinking about the copyrighted project, finally got a chance to get back to small design implementations.", tasks131024)
