@@ -39,3 +39,17 @@ const tasks131024 = [
 ]
 
 export const log131024 = new LogPost('13.10.24', "Have continued thinking about the copyrighted project, finally got a chance to get back to small design implementations.", tasks131024)
+
+const tasks171024 = [
+    {
+        task: 'Complete input search page.',
+        complete: true
+    },
+    {
+        task: 'Change logic to allow navigation to different type of "productpage".',
+        complete: true
+    },
+
+]
+
+export const log171024 = new LogPost('17.10.24', "This week I hhave made good ground on the demo of the copyright project. Need to get back into the swing of writing these out to maintain the gh streak.", tasks171024)
