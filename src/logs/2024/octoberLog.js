@@ -52,4 +52,17 @@ const tasks171024 = [
 
 ]
 
-export const log171024 = new LogPost('17.10.24', "This week I hhave made good ground on the demo of the copyright project. Need to get back into the swing of writing these out to maintain the gh streak.", tasks171024)
+export const log171024 = new LogPost('19.10.24', "This week I hhave made good ground on the demo of the copyright project. Need to get back into the swing of writing these out to maintain the gh streak.", tasks171024)
+
+const tasks191024 = [
+    {
+        task: 'Small bug fixes on product page ui.',
+        complete: true
+    },
+    {
+        task: 'Make sure searched input items link to the correct place.',
+        complete: true
+    },
+]
+
+export const log191024 = new LogPost('19.10.24', "The demo for copyright project is now live.", tasks171024)
