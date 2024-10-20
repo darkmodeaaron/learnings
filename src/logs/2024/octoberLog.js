@@ -66,3 +66,16 @@ const tasks191024 = [
 ]
 
 export const log191024 = new LogPost('19.10.24', "The demo for copyright project is now live.", tasks171024)
+
+const tasks201024 = [
+    {
+        task: 'List brands and amin items to go on copyright project.',
+        complete: true
+    },
+    {
+        task: 'Add teh serached term to the InputSearch page.',
+        complete: true
+    },
+]
+
+export const log201024 = new LogPost('20.10.24', "Time to start selecting products.", tasks171024)
