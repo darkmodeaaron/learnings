@@ -79,3 +79,17 @@ const tasks201024 = [
 ]
 
 export const log201024 = new LogPost('20.10.24', "Time to start selecting products.", tasks171024)
+
+const tasks221024 = [
+    {
+        task: 'Complete episode 7 of caleb cuury tut.',
+        complete: true
+    },
+    {
+        task: 'Complete episode 8 of caleb cuury tut.',
+        complete: true
+    },
+
+]
+
+export const log221024 = new LogPost('22.10.24', "I'm getting back to it with node js so I can start to create a database for my copyright project.", tasks221024)
