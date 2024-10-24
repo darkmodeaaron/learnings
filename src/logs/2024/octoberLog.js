@@ -93,3 +93,34 @@ const tasks221024 = [
 ]
 
 export const log221024 = new LogPost('22.10.24', "I'm getting back to it with node js so I can start to create a database for my copyright project.", tasks221024)
+
+const tasks241024 = [
+    {
+        task: 'Start creating the database needed to get information from on the mongodb atlas platform.',
+        complete: true
+    },
+
+
+]
+
+export const log241024 = new LogPost('24.10.24', "So I managed to get the server up amd running! i simply need to update the version of nodejs I was running. ", tasks241024)
+
+const tasks251024 = [
+    {
+        task: 'Purchase first item.',
+        complete: true
+    },
+    {
+        task: 'Fix when selector menu collapses.',
+        complete: true
+    },
+    {
+        task: 'Create a component that will teake use back to the homepage if search returns empty array.',
+        complete: true
+    },
+
+
+]
+
+export const log251024 = new LogPost('25.10.24', "Today I am going to purchase the first item that i will collect the data on to text the process of how it is going to work. I also am going to work on some small ui features on the front-end. ", tasks251024)
+
