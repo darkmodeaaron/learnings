@@ -124,3 +124,16 @@ const tasks251024 = [
 
 export const log251024 = new LogPost('25.10.24', "Today I am going to purchase the first item that i will collect the data on to text the process of how it is going to work. I also am going to work on some small ui features on the front-end. ", tasks251024)
 
+const tasks291024 = [
+    {
+        task: 'Purchase full set of second item.',
+        complete: true
+    },
+    {
+        task: 'Create the complete template for document inside the database.',
+        complete: true
+    },
+
+]
+
+export const log291024 = new LogPost('29.10.24', "Over the past couple of days I have intergrated the backend into my react app. It now creates a server with one endpoint to the 't-shirts' collection.", tasks291024)
