@@ -289,8 +289,9 @@ import { log221024 } from "./logs/2024/octoberLog.js"
 import { log241024 } from "./logs/2024/octoberLog.js"
 import { log251024 } from "./logs/2024/octoberLog.js"
 import { log291024 } from "./logs/2024/octoberLog.js"
+import { log301024 } from "./logs/2024/octoberLog.js"
 
-const logPosts = [log291024, log251024, log241024, log221024, log201024, log191024, log171024, log131024, log091024, log081024, log021024, log300924, log260924, log240924, log230924, log190924, log100924, log090924, log030924, log020924, log290824,]
+const logPosts = [log301024, log291024, log251024, log241024, log221024, log201024, log191024, log171024, log131024, log091024, log081024, log021024, log300924, log260924, log240924, log230924, log190924, log100924, log090924, log030924, log020924, log290824,]
 
 logPosts.forEach(log => {
     log.createLog()

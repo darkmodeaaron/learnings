@@ -137,3 +137,13 @@ const tasks291024 = [
 ]
 
 export const log291024 = new LogPost('29.10.24', "Over the past couple of days I have intergrated the backend into my react app. It now creates a server with one endpoint to the 't-shirts' collection.", tasks291024)
+
+const tasks301024 = [
+    {
+        task: 'Get backend for copyright hosted on heroku.',
+        complete: true
+    },
+
+]
+
+export const log301024 = new LogPost('30.10.24', "I will try to get my frontend up and running on hostinger and backend hosted on heroku.", tasks301024)
