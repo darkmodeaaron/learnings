@@ -24,5 +24,21 @@ const tasks041124 = [
 
 ]
 
-export const log041124 = new LogPost('01.11.24', "No coding today but will be completing a guride I can refer to so that I get acurate info on all products consittently.", tasks041124
+export const log041124 = new LogPost('04.11.24', "No coding today but will be completing a guride I can refer to so that I get acurate info on all products consittently.", tasks041124
+)
+
+const tasks051124 = [
+    {
+        task: 'Complete product details and put them into mongodb.',
+        complete: true
+    },
+    {
+        task: 'Create the local app to save time when working on the localhost.',
+        complete: true
+    } 
+
+
+]
+
+export const log051124 = new LogPost('05.11.24', "I want to get the first item with the coreect product detail ups today. I also want to set up another codebase that will hold the working app inside so I have a separate one for when working in localhost, this will save me time swithcing out URI's and so on.", tasks051124
 )
