@@ -46,11 +46,18 @@ export const log051124 = new LogPost('05.11.24', "I want to get the first item w
 const tasks071124 = [
     {
         task: 'FINISH NEW SITE FOR AUDIO42.',
-        complete: true
+        complete: false
     },
-
-
 ]
 
 export const log071124 = new LogPost('07.11.24', "Moving away from copyright tonight. WIll be starting and FINISHING my bro's website for his company.", tasks071124
 )
+
+const tasks091124 = [
+    {
+        task: 'CONTINUE NEW SITE FOR AUDIO42.',
+        complete: true
+    },
+]
+
+export const log091124 = new LogPost('0.11.24', "Things took a turn lastnight. After revising the code I dont understand what i was thinking when i created it last time so I practically started again. The stack is React and Tailwind and a few more pages need adding. Should be finished by Monday.", tasks091124)
