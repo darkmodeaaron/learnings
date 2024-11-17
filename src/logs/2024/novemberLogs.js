@@ -61,3 +61,9 @@ const tasks091124 = [
 ]
 
 export const log091124 = new LogPost('0.11.24', "Things took a turn lastnight. After revising the code I dont understand what i was thinking when i created it last time so I practically started again. The stack is React and Tailwind and a few more pages need adding. Should be finished by Monday.", tasks091124)
+
+const tasks171124 = [
+
+]
+
+export const log171124 = new LogPost('17.11.24', "Nothing today just an update. Have nearly finished sam's website. Perfect is the enemy of good.")
